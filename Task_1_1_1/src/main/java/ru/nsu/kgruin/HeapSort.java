@@ -2,12 +2,7 @@ package ru.nsu.kgruin;
 
 public class HeapSort {
 
-        public static void main(String[] args) {
-            int[] a = {1, 2, 3};
-            int[] b = {2, 1, 3};
-            HeapSort.heapsort(b);
-
-        }
+        public static void main(String[] args) {}
 
         public static void heapsort(int[] arr) {
             int n = arr.length;
@@ -22,7 +17,7 @@ public class HeapSort {
             }
         }
 
-        private static void heapify(int[] arr, int i, int n) {
+        public static void heapify(int[] arr, int i, int n) {
             int l = 2 * i + 1;
             int r = 2 * i + 2;
             int largest = i;

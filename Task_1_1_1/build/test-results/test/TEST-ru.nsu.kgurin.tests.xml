@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.kgurin.tests" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-09-21T10:03:27" hostname="DESKTOP-BO2GT1O" time="0.052">
+<testsuite name="ru.nsu.kgurin.Tests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-21T15:32:15" hostname="DESKTOP-BO2GT1O" time="0.049">
   <properties/>
-  <testcase name="test_1()" classname="ru.nsu.kgurin.tests" time="0.045"/>
-  <testcase name="test_2()" classname="ru.nsu.kgurin.tests" time="0.001"/>
-  <testcase name="test_3()" classname="ru.nsu.kgurin.tests" time="0.001"/>
-  <testcase name="test_4()" classname="ru.nsu.kgurin.tests" time="0.001"/>
-  <testcase name="test_5()" classname="ru.nsu.kgurin.tests" time="0.001"/>
+  <testcase name="test_2()" classname="ru.nsu.kgurin.Tests" time="0.049"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

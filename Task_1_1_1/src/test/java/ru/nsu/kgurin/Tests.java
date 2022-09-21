@@ -2,11 +2,9 @@ package ru.nsu.kgurin;
 
 import org.junit.jupiter.api.Test;
 import ru.nsu.kgruin.HeapSort;
-import ru.nsu.kgruin.HeapSort;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class tests {
+public class Tests {
     @Test
     void test_1() {
         int[] a = {1, 2, 3};
