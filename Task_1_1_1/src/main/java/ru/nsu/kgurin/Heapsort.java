@@ -38,7 +38,7 @@ public class Heapsort {
         int l = 2 * i + 1;
         int r = 2 * i + 2;
         int largest = i;
-        if (l < n && arr[l] > arr[largest]){
+        if (l < n && arr[l] > arr[largest]) {
             largest = l;
         }
         if (r < n && arr[r] > arr[largest]) {

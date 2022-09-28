@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4295796d-0b32-4272-95bd-6a3534ec5db3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Task_1_2_1/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_1_2_1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_1_2_1/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_1_2_1/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task_1_2_1/src/main/java/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/nsu/kgurin/Heapsort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/nsu/kgurin/Heapsort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/nsu/kgurin/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/nsu/kgurin/Tests.java" afterDir="false" />
