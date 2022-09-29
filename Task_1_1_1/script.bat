@@ -4,3 +4,5 @@ javac -d .\make\bin\ -sourcepath .\src\main\java .\src\main\java\ru\nsu\kgurin\H
 
 mkdir .\make\jar
 jar cf .\make\jar\Heapsort.jar -C .\make\bin .
+
+java -classpath .\make\jar\Heapsort.jar ru.nsu.kgurin.Heapsort

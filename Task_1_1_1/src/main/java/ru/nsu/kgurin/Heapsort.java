@@ -34,7 +34,7 @@ public class Heapsort {
      * @param i root of subtree
      * @param n conditional size of binary tree
      */
-    public static void heapify(int[] arr, int i, int n) {
+    private static void heapify(int[] arr, int i, int n) {
         int l = 2 * i + 1;
         int r = 2 * i + 2;
         int largest = i;
