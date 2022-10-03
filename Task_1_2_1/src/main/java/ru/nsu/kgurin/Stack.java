@@ -17,7 +17,7 @@ public class Stack<T> {
      *
      * @param capacity capacity of stack
      */
-    public Stack (int capacity){
+    public Stack(int capacity) {
         this.capacity = capacity;
         this.size = 0;
         this.arr = (T[]) new Object[capacity];
@@ -26,8 +26,8 @@ public class Stack<T> {
     /**
      * "realloc" method enhance the size of stack.
      */
-    private void realloc(){
-        capacity = capacity*2;
+    private void realloc() {
+        capacity *= 2;
         arr = Arrays.copyOf(arr, capacity);
     }
 
@@ -36,8 +36,8 @@ public class Stack<T> {
      *
      * @param elem new element to be inserted in the stack
      */
-    public void push(T elem){
-        if (size ==capacity){
+    public void push(T elem) {
+        if (size == capacity){
             realloc();
         }
         arr[size++] = elem;
@@ -60,13 +60,12 @@ public class Stack<T> {
      *
      * @return popped element
      */
-    public T pop(){
+    public T pop() {
         if (size != 0){
             T remElem = arr[--size];
             arr[size] = null;
             return remElem;
-        }
-        else{
+        } else {
             return null;
         }
     }
@@ -114,8 +113,8 @@ public class Stack<T> {
         if (count() != actual.count()){
             return false;
         }
-        for(int i = 0; i<size; i++){
-            if (arr[i] != actual.arr[i]){
+        for(int i = 0; i < size; i++) {
+            if (arr[i] != actual.arr[i]) {
                 return false;
             }
         }

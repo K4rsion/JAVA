@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class StackTest {
 
     @Test
-    public void exampleTest(){
+    public void exampleTest() {
         Stack<Integer> expected = new Stack<>(1);
         expected.push(2);
 
@@ -28,7 +28,7 @@ public class StackTest {
     }
 
     @Test
-    public void emptyStackTest(){
+    public void emptyStackTest() {
         Stack<Integer> expected = new Stack<>(1);
 
         Stack<Integer> actual = new Stack<>(1);
@@ -37,7 +37,7 @@ public class StackTest {
     }
 
     @Test
-    public void boundExceededTest(){
+    public void boundExceededTest() {
         Stack<Integer> expected = new Stack<>(1);
         expected.pop();
         expected.push(2);
@@ -52,8 +52,9 @@ public class StackTest {
     }
 
     @Test
-    public void equalPopAndPopStackTest(){
+    public void equalPopAndPopStackTest() {
         Stack<Integer> expected = new Stack<>(1);
+        expected.pop();
 
         Stack<Integer> actual = new Stack<>(2);
         actual.push(2);
@@ -65,7 +66,7 @@ public class StackTest {
     }
 
     @Test
-    public void reallocTest(){
+    public void reallocTest() {
         Stack<Integer> expected = new Stack<>(1);
         expected.push(1);
         expected.push(2);
@@ -82,7 +83,7 @@ public class StackTest {
     }
 
     @Test
-    public void stringTest(){
+    public void stringTest() {
         Stack<String> expected = new Stack<>(4);
         expected.push("My");
         expected.push("Name");
