@@ -8,7 +8,7 @@ import java.util.Arrays;
  * It works according to the principle - last in, first out (LIFO).
  */
 public class Stack<T> {
-    private T arr[];
+    private T[] arr;
     private int size;
     private int capacity;
 
@@ -37,7 +37,7 @@ public class Stack<T> {
      * @param elem new element to be inserted in the stack
      */
     public void push(T elem) {
-        if (size == capacity){
+        if (size == capacity) {
             realloc();
         }
         arr[size++] = elem;
@@ -61,7 +61,7 @@ public class Stack<T> {
      * @return popped element
      */
     public T pop() {
-        if (size != 0){
+        if (size != 0) {
             T remElem = arr[--size];
             arr[size] = null;
             return remElem;
@@ -109,11 +109,11 @@ public class Stack<T> {
      * @param actual stack to be compared with expected one
      * @return false, if stacks are not equal, and true otherwise
      */
-    public boolean stackAssertion(Stack<T> actual){
-        if (count() != actual.count()){
+    public boolean stackAssertion(Stack<T> actual) {
+        if (count() != actual.count()) {
             return false;
         }
-        for(int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) {
             if (arr[i] != actual.arr[i]) {
                 return false;
             }
