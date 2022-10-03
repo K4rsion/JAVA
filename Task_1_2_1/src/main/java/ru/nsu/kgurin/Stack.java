@@ -99,7 +99,7 @@ public class Stack<T> {
      *
      * @return size of stack
      */
-    public int count(){
+    public int count() {
         return size;
     }
 
