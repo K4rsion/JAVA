@@ -105,7 +105,7 @@ public class Stack<T> {
 
         Stack<?> that = (Stack<?>) obj;
 
-        if (that.size != ((Stack<?>)obj).size) {
+        if (that.size != ((Stack<?>) obj).size) {
             return false;
         }
 
