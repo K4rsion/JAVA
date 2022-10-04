@@ -77,19 +77,10 @@ public class Stack<T> {
      * @return last N elements of the stack
      */
     public Stack<T> popStack(int num) {
-        Stack<T> remStack;
-        if (num <= size) {
-            remStack = new Stack<T>(num);
-            remStack.size = num;
-            for (int i = num - 1; i >= 0; i--) {
-                remStack.arr[i] = pop();
-            }
-        } else {
-            remStack = new Stack<T>(size);
-            remStack.size = size;
-            for (int i = size - 1; i >= 0; i--) {
-                remStack.arr[i] = pop();
-            }
+        Stack<T> remStack = new Stack<T>(num);
+        remStack.size = num;
+        for (int i = num - 1; i >= 0; i--) {
+            remStack.arr[i] = pop();
         }
         return remStack;
     }
@@ -103,21 +94,31 @@ public class Stack<T> {
         return size;
     }
 
-    /**
-     * "stackAssertion" method compares two stacks and finds out if they are equal or not.
-     *
-     * @param actual stack to be compared with expected one
-     * @return false, if stacks are not equal, and true otherwise
-     */
-    public boolean stackAssertion(Stack<T> actual) {
-        if (count() != actual.count()) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        for (int i = 0; i < size; i++) {
-            if (arr[i] != actual.arr[i]) {
+
+        Stack<?> that = (Stack<?>) obj;
+
+        if (that.size != ((Stack<?>)obj).size) {
+            return false;
+        }
+
+        for (int i = 0; i < that.size; i++) {
+            if (that.arr[i] != ((Stack<?>) obj).arr[i]) {
                 return false;
             }
         }
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * (Arrays.hashCode(arr));
     }
 }
