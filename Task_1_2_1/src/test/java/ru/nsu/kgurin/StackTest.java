@@ -102,4 +102,76 @@ public class StackTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void pushTest() {
+        Stack<Integer> expected = new Stack<>(1);
+        expected.push(1);
+        expected.push(2);
+
+        Stack<Integer> actual = new Stack<>(1);
+        actual.push(1);
+        actual.push(2);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void popTest() {
+        Stack<Integer> expected = new Stack<>(1);
+        expected.push(1);
+        expected.push(2);
+
+        Stack<Integer> actual = new Stack<>(1);
+        actual.push(1);
+        actual.push(3);
+        actual.pop();
+        actual.push(2);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void pushStackTest() {
+        Stack<Integer> expected = new Stack<>(1);
+        expected.push(1);
+        expected.push(2);
+        expected.push(3);
+
+        Stack<Integer> actual = new Stack<>(1);
+        actual.push(1);
+        Stack<Integer> s1 = new Stack<>(1);
+        s1.push(2);
+        s1.push(3);
+        actual.pushStack(s1);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void popStackTest() {
+        Stack<Integer> expected = new Stack<>(1);
+        expected.push(1);
+
+        Stack<Integer> actual = new Stack<>(1);
+        actual.push(1);
+        actual.push(2);
+        actual.push(3);
+        actual.popStack(2);
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void countTest() {
+        Stack<Integer> expected = new Stack<>(1);
+        expected.push(1);
+        expected.push(2);
+
+        Stack<Integer> actual = new Stack<>(1);
+        actual.push(1);
+        actual.push(2);
+
+        Assertions.assertEquals(expected.count(), actual.count());
+    }
 }

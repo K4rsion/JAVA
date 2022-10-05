@@ -24,14 +24,6 @@ public class Stack<T> {
     }
 
     /**
-     * "realloc" method enhance the size of stack.
-     */
-    private void realloc() {
-        capacity *= 2;
-        arr = Arrays.copyOf(arr, capacity);
-    }
-
-    /**
      * "push" method puts element to the end of the stack.
      *
      * @param elem new element to be inserted in the stack
@@ -105,12 +97,12 @@ public class Stack<T> {
 
         Stack<?> that = (Stack<?>) obj;
 
-        if (that.size != ((Stack<?>) obj).size) {
+        if (size != that.size) {
             return false;
         }
 
         for (int i = 0; i < that.size; i++) {
-            if (that.arr[i] != ((Stack<?>) obj).arr[i]) {
+            if (arr[i] != that.arr[i]) {
                 return false;
             }
         }
@@ -120,5 +112,13 @@ public class Stack<T> {
     @Override
     public int hashCode() {
         return 31 * (Arrays.hashCode(arr));
+    }
+
+    /**
+     * "realloc" method enhance the size of stack.
+     */
+    private void realloc() {
+        capacity *= 2;
+        arr = Arrays.copyOf(arr, capacity);
     }
 }
