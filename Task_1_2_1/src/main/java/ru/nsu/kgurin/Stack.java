@@ -70,7 +70,7 @@ public class Stack<T> {
      */
     public Stack<T> popStack(int num) {
         Stack<T> remStack = new Stack<T>(num);
-        remStack.size = num;
+        remStack.size = size > num ? num : size;
         for (int i = num - 1; i >= 0; i--) {
             remStack.arr[i] = pop();
         }
