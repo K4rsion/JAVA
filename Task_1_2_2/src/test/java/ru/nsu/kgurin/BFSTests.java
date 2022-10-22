@@ -1,0 +1,81 @@
+package ru.nsu.kgurin;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.ConcurrentModificationException;
+import java.util.List;
+
+/**
+ * Tests for my BFS algorithm.
+ */
+public class BFSTests {
+    @Test
+    public void hasNextTest() {
+        Node<Integer> root = new Node<>(1);
+        Node<Integer> rootA = new Node<>(2);
+        root.add(rootA);
+        BreadthFirstSearchIterator<Integer> bfs = new BreadthFirstSearchIterator<>(root);
+
+        Assertions.assertTrue(bfs.hasNext());
+    }
+
+    @Test
+    public void nextTest() {
+        Node<Integer> root = new Node<>(1);
+        Node<Integer> rootA = new Node<>(2);
+        root.add(rootA);
+        BreadthFirstSearchIterator<Integer> bfs = new BreadthFirstSearchIterator<>(root);
+        bfs.next();
+
+        Assertions.assertEquals(bfs.next().getValue(), rootA.getValue());
+    }
+
+    @Test
+    public void modCountTest() {
+        Node<Integer> root = new Node<>(1);
+        Node<Integer> rootA = new Node<>(2);
+        root.add(rootA);
+        BreadthFirstSearchIterator<Integer> bfs = new BreadthFirstSearchIterator<>(root);
+        bfs.next();
+        Node<Integer> problemNode = new Node<>(3);
+        rootA.add(problemNode);
+
+        ConcurrentModificationException thrown = Assertions.assertThrows(ConcurrentModificationException.class, () -> {
+            bfs.next();
+        }, "Changing structure while iterating");
+
+        Assertions.assertEquals("Changing structure while iterating", thrown.getMessage());
+    }
+
+    @Test
+    public void bfsAlgorithmTest() {
+        //expected
+        List<Integer> expected = new ArrayList<>(Arrays.asList(1, 2, 3, 22, 33, 333));
+
+        //actual
+        Node<Integer> root = new Node<>(1);
+        Node<Integer> rootA = new Node<>(2);
+        root.add(rootA);
+        Node<Integer> rootAA = new Node<>(22);
+        rootA.add(rootAA);
+        Node<Integer> rootB = new Node<>(3);
+        root.add(rootB);
+        Node<Integer> rootBB = new Node<>(33);
+        rootB.add(rootBB);
+        Node<Integer> rootBBB = new Node<>(333);
+        rootBB.add(rootBBB);
+
+        BreadthFirstSearchIterator<Integer> bfs = new BreadthFirstSearchIterator<>(root);
+        List<Integer> actual = new ArrayList<>();
+
+        while (bfs.hasNext()) {
+            actual.add(bfs.next().getValue());
+        }
+
+        //asserts
+        Assertions.assertEquals(expected, actual);
+    }
+}
