@@ -1,6 +1,9 @@
 package ru.nsu.kgurin;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * Node is a fundamental component of the tree.

@@ -1,6 +1,9 @@
 package ru.nsu.kgurin;
 
-import java.util.*;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * BFS algorithm for traversing a tree in depth.

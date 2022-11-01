@@ -1,6 +1,9 @@
 package ru.nsu.kgurin;
 
-import java.util.*;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * DFS algorithm for traversing a tree in breadth.

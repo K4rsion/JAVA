@@ -1,11 +1,10 @@
 package ru.nsu.kgurin;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Tests for my tree implementation.
@@ -49,10 +48,10 @@ class TreeTests {
         Node<Integer> root = new Node<>(1);
         Node<Integer> rootA = new Node<>(2);
         root.add(rootA);
-        Node<Integer> rootAA = new Node<>(22);
-        rootA.add(rootAA);
+        Node<Integer> rootAa = new Node<>(22);
+        rootA.add(rootAa);
 
-        Assertions.assertEquals(root, rootAA.getRoot());
+        Assertions.assertEquals(root, rootAa.getRoot());
     }
 
     @Test
@@ -67,8 +66,8 @@ class TreeTests {
         Node<Integer> actual = new Node<>(1);
         Node<Integer> actualA = new Node<>(2);
         actual.add(actualA);
-        Node<Integer> actualAA = new Node<>(22);
-        actualA.add(actualAA);
+        Node<Integer> actualAa = new Node<>(22);
+        actualA.add(actualAa);
 
         //asserts
         Assertions.assertEquals(expected.getModCount(), actual.getModCount());
@@ -108,12 +107,12 @@ class TreeTests {
         root.add(rootA);
         Node<Integer> rootB = new Node<>(3);
         root.add(rootB);
-        Node<Integer> rootAA = new Node<>(4);
-        rootA.add(rootAA);
-        Node<Integer> rootAB = new Node<>(5);
-        rootA.add(rootAB);
-        Node<Integer> rootBA = new Node<>(6);
-        rootB.add(rootBA);
+        Node<Integer> rootAa = new Node<>(4);
+        rootA.add(rootAa);
+        Node<Integer> rootAb = new Node<>(5);
+        rootA.add(rootAb);
+        Node<Integer> rootBa = new Node<>(6);
+        rootB.add(rootBa);
 
         //actual
         List<Integer> actualListDfs = new ArrayList<>();
@@ -187,8 +186,8 @@ class TreeTests {
         expected.add(expectedA);
         Node<Integer> expectedB = new Node<>(3);
         expected.add(expectedB);
-        Node<Integer> expectedAA = new Node<>(4);
-        expectedA.add(expectedAA);
+        Node<Integer> expectedAa = new Node<>(4);
+        expectedA.add(expectedAa);
 
         //actual
         Node<Integer> actual = new Node<>(1);
@@ -198,11 +197,11 @@ class TreeTests {
         actual.add(actualB);
         Node<Integer> actualC = new Node<>(4);
         actual.add(actualC);
-        Node<Integer> actualCC = new Node<>(5);
-        actualC.add(actualCC);
+        Node<Integer> actualCc = new Node<>(5);
+        actualC.add(actualCc);
         actual.remove(actualC);
-        Node<Integer> actualAA = new Node<>(4);
-        actualA.add(actualAA);
+        Node<Integer> actualAa = new Node<>(4);
+        actualA.add(actualAa);
 
         //asserts
         Assertions.assertEquals(expected, actual);
