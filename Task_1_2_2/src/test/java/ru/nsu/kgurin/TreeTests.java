@@ -120,7 +120,7 @@ class TreeTests {
             actualListDfs.add(i.getValue());
         }
 
-        root.setTypeOfFirstSearch(Node.typeOfFirstSearch.BFS);
+        root.setTypeOfFirstSearch(Node.iteratorType.BFS);
         List<Integer> actualListBfs = new ArrayList<>();
         for (Node<Integer> i : root) {
             actualListBfs.add(i.getValue());
