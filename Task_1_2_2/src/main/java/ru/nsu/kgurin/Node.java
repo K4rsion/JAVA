@@ -14,10 +14,10 @@ class Node<T> implements Iterable<Node<T>> {
     private List<Node<T>> children;
     private T value;
 
-    public enum iteratorType {BFS, DFS}
+    public enum IteratorType {BFS, DFS}
 
     ;
-    private iteratorType typeOfSearch;
+    private IteratorType typeOfSearch;
     private int modCount;
 
     /**
@@ -30,7 +30,7 @@ class Node<T> implements Iterable<Node<T>> {
         this.value = val;
         this.parent = null;
         this.modCount = 0;
-        typeOfSearch = iteratorType.DFS;
+        typeOfSearch = IteratorType.DFS;
     }
 
     /**
@@ -103,7 +103,7 @@ class Node<T> implements Iterable<Node<T>> {
      *
      * @param newType the identifier of type of search
      */
-    public void setTypeOfFirstSearch(iteratorType newType) {
+    public void setTypeOfFirstSearch(IteratorType newType) {
         this.typeOfSearch = newType;
     }
 
@@ -114,7 +114,7 @@ class Node<T> implements Iterable<Node<T>> {
      */
     @Override
     public Iterator<Node<T>> iterator() {
-        return typeOfSearch == iteratorType.DFS
+        return typeOfSearch == IteratorType.DFS
                 ? new DepthFirstSearchIterator<>(this)
                 : new BreadthFirstSearchIterator<>(this);
     }
