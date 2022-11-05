@@ -14,7 +14,7 @@ class Node<T> implements Iterable<Node<T>> {
     private List<Node<T>> children;
     private T value;
 
-    public enum IteratorType {BFS, DFS}
+    public enum IteratorType { BFS, DFS }
 
     ;
     private IteratorType typeOfSearch;
