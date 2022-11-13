@@ -1,14 +1,17 @@
 package ru.nsu.kgurin;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
+
+/**
+ * Tests for graph implementation.
+ */
 public class GraphTest {
 
     // Atomic tests
@@ -94,6 +97,15 @@ public class GraphTest {
         Vertex<Integer> c = new Vertex<>(3);
         Vertex<Integer> d = new Vertex<>(4);
 
+        a.setVisited(true);
+        b.setVisited(true);
+        c.setVisited(true);
+        d.setVisited(true);
+        a.setDistance(0);
+        b.setDistance(3);
+        c.setDistance(2);
+        d.setDistance(4);
+
         Graph<Integer> graph = new Graph<>();
 
         graph.addVertex(1);
@@ -110,14 +122,6 @@ public class GraphTest {
         List<Vertex<Integer>> actual = graph.dijkstra(a);
 
         //expected
-        a.setVisited(true);
-        b.setVisited(true);
-        c.setVisited(true);
-        d.setVisited(true);
-        a.setDistance(0);
-        b.setDistance(3);
-        c.setDistance(2);
-        d.setDistance(4);
         List<Vertex<Integer>> expected = Arrays.asList(a, c, b, d);
 
         //asserts
@@ -128,7 +132,8 @@ public class GraphTest {
     @Test
     void matrixOfIncidenceTest() {
         // actual
-        InputStream file = getClass().getClassLoader().getResourceAsStream("Matrix of incidence.txt");
+        InputStream file =
+                getClass().getClassLoader().getResourceAsStream("Matrix of incidence.txt");
         assert file != null;
         Scanner sc = new Scanner(file);
 
@@ -148,8 +153,6 @@ public class GraphTest {
             }
         }
 
-        Graph<Integer> actual = new Graph<>(vertexArray, weights, edgeCount);
-
         //expected
         Vertex<Integer> a = new Vertex<>(1);
         Vertex<Integer> b = new Vertex<>(2);
@@ -169,6 +172,8 @@ public class GraphTest {
         expected.addEdge(b, d, 1);
         expected.addEdge(c, b, 1);
 
+        Graph<Integer> actual = new Graph<>(vertexArray, weights, edgeCount);
+
         //asserts
         Assertions.assertEquals(expected, actual);
     }
@@ -176,7 +181,8 @@ public class GraphTest {
     @Test
     void matrixOfAdjacencyTest() {
         // actual
-        InputStream file = getClass().getClassLoader().getResourceAsStream("Matrix of adjacency.txt");
+        InputStream file =
+                getClass().getClassLoader().getResourceAsStream("Matrix of adjacency.txt");
         assert file != null;
         Scanner sc = new Scanner(file);
 
@@ -195,8 +201,6 @@ public class GraphTest {
             }
         }
 
-        Graph<Integer> actual = new Graph<>(vertexArray, weights);
-
         //expected
         Vertex<Integer> a = new Vertex<>(1);
         Vertex<Integer> b = new Vertex<>(2);
@@ -216,6 +220,8 @@ public class GraphTest {
         expected.addEdge(b, d, 1);
         expected.addEdge(c, b, 1);
 
+        Graph<Integer> actual = new Graph<>(vertexArray, weights);
+
         //asserts
         Assertions.assertEquals(expected, actual);
     }
@@ -223,7 +229,8 @@ public class GraphTest {
     @Test
     void listOfAdjacencyTest() {
         // actual
-        InputStream file = getClass().getClassLoader().getResourceAsStream("List of adjacency.txt");
+        InputStream file =
+                getClass().getClassLoader().getResourceAsStream("List of adjacency.txt");
         assert file != null;
         Scanner sc = new Scanner(file);
 
@@ -250,8 +257,6 @@ public class GraphTest {
             }
         }
 
-        Graph<String> actual = new Graph<>(vertexArray, vertexList, weights);
-
         //expected
         Vertex<String> a = new Vertex<>("a");
         Vertex<String> b = new Vertex<>("b");
@@ -270,6 +275,8 @@ public class GraphTest {
         expected.addEdge(a, d, 5);
         expected.addEdge(b, d, 1);
         expected.addEdge(c, b, 1);
+
+        Graph<String> actual = new Graph<>(vertexArray, vertexList, weights);
 
         //asserts
         Assertions.assertEquals(expected, actual);

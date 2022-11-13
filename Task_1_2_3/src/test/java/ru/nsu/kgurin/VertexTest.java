@@ -3,6 +3,9 @@ package ru.nsu.kgurin;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests for vertex implementation.
+ */
 public class VertexTest {
 
     // Atomic tests

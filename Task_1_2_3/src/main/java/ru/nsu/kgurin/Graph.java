@@ -73,7 +73,9 @@ public class Graph<T> {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
                 if (matrix[i][j] != 0) {
-                    addEdge(vertices.get(vertexArray[j]), vertices.get(vertexArray[i]), matrix[i][j]);
+                    addEdge(vertices.get(vertexArray[j]),
+                            vertices.get(vertexArray[i]),
+                            matrix[i][j]);
                 }
             }
         }
@@ -94,7 +96,9 @@ public class Graph<T> {
 
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < vertexList[i].size(); j++) {
-                addEdge(vertices.get(vertexArray[i]), vertices.get(vertexList[i].get(j)), weights[i].get(j));
+                addEdge(vertices.get(vertexArray[i]),
+                        vertices.get(vertexList[i].get(j)),
+                        weights[i].get(j));
             }
         }
     }
@@ -126,7 +130,9 @@ public class Graph<T> {
             for (var edge : currentEdgeList) {
                 Vertex<T> vertexTo = vertices.get(edge.getVertexTo().getKey());
                 vertexTo.setDistance(
-                        Math.min(currentVertex.getDistance() + edge.getWeight(), vertexTo.getDistance())
+                        Math.min(
+                                currentVertex.getDistance() + edge.getWeight(),
+                                vertexTo.getDistance())
                 );
             }
             result.sort(Comparator.comparingInt(Vertex::getDistance));
