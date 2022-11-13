@@ -93,17 +93,16 @@ public class GraphTest {
     void dijkstraTest() {
         //actual
         Vertex<Integer> a = new Vertex<>(1);
-        Vertex<Integer> b = new Vertex<>(2);
-        Vertex<Integer> c = new Vertex<>(3);
-        Vertex<Integer> d = new Vertex<>(4);
-
         a.setVisited(true);
-        b.setVisited(true);
-        c.setVisited(true);
-        d.setVisited(true);
         a.setDistance(0);
+        Vertex<Integer> b = new Vertex<>(2);
+        b.setVisited(true);
         b.setDistance(3);
+        Vertex<Integer> c = new Vertex<>(3);
+        c.setVisited(true);
         c.setDistance(2);
+        Vertex<Integer> d = new Vertex<>(4);
+        d.setVisited(true);
         d.setDistance(4);
 
         Graph<Integer> graph = new Graph<>();
