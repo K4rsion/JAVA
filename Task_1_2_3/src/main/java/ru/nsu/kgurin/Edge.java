@@ -10,6 +10,13 @@ public class Edge<T> {
     private final Vertex<T> vertexFrom;
     private final Vertex<T> vertexTo;
 
+    /**
+     * Constructor for edge.
+     *
+     * @param vertexFrom vertex that the edge exit
+     * @param vertexTo   vertex that the edge enter
+     * @param weight     weight of edge
+     */
     public Edge(Vertex<T> vertexFrom, Vertex<T> vertexTo, int weight) {
         this.weight = weight;
         this.vertexFrom = vertexFrom;
@@ -52,7 +59,8 @@ public class Edge<T> {
             return false;
         }
         Edge<?> edge = (Edge<?>) o;
-        return Objects.equals(vertexFrom, edge.vertexFrom) && Objects.equals(vertexTo, edge.vertexTo)
+        return Objects.equals(vertexFrom, edge.vertexFrom)
+                && Objects.equals(vertexTo, edge.vertexTo)
                 && Objects.equals(weight, edge.weight);
     }
 

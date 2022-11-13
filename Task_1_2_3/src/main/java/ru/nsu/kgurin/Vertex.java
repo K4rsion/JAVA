@@ -10,6 +10,11 @@ public class Vertex<T> {
     private boolean visited;
     private int distance;
 
+    /**
+     * Constructor for vertex.
+     *
+     * @param key key of vertex
+     */
     public Vertex(T key) {
         this.key = key;
         this.visited = false;

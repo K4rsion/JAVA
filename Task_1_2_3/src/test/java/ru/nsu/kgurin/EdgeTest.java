@@ -3,6 +3,9 @@ package ru.nsu.kgurin;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tests for edge implementation.
+ */
 public class EdgeTest {
 
     // Atomic tests
