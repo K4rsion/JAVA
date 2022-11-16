@@ -1,10 +1,6 @@
 package ru.nsu.kgurin;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Graph is a collection of nodes also called vertices which are connected between one another.
@@ -12,13 +8,8 @@ import java.util.Objects;
  */
 public class Graph<T> {
     private static final int INF = Integer.MAX_VALUE;
-    private final HashMap<T, Vertex<T>> vertices;
-    private final HashMap<T, List<Edge<T>>> edges;
-
-    {
-        vertices = new HashMap<>();
-        edges = new HashMap<>();
-    }
+    private final Map<T, Vertex<T>> vertices = new HashMap<>();
+    private final Map<T, List<Edge<T>>> edges = new HashMap<>();
 
     /**
      * Empty graph.
