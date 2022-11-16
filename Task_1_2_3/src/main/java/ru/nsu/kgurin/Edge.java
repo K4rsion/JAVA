@@ -1,7 +1,5 @@
 package ru.nsu.kgurin;
 
-import java.util.Objects;
-
 /**
  * Edge is a basic element of a graph that connects two vertices.
  */
