@@ -20,7 +20,7 @@ public class EdgeTest {
         Vertex<Integer> expectedVertexTo = new Vertex<>(2);
 
         //asserts
-        Assertions.assertEquals(expectedVertexTo, actualEdge.getVertexTo());
+        Assertions.assertEquals(expectedVertexTo, actualEdge.vertexTo());
     }
 
     @Test
@@ -34,7 +34,7 @@ public class EdgeTest {
         Vertex<Integer> expectedVertexTo = new Vertex<>(1);
 
         //asserts
-        Assertions.assertEquals(expectedVertexTo, actualEdge.getVertexFrom());
+        Assertions.assertEquals(expectedVertexTo, actualEdge.vertexFrom());
     }
 
     @Test
@@ -45,7 +45,7 @@ public class EdgeTest {
         Edge<Integer> actualEdge = new Edge<>(actualVertexFrom, actualVertexTo, 1);
 
         //asserts
-        Assertions.assertEquals(1, actualEdge.getWeight());
+        Assertions.assertEquals(1, actualEdge.weight());
     }
 
     @Test

@@ -128,10 +128,10 @@ public class Graph<T> {
             List<Edge<T>> currentEdgeList = edges.get(currentVertex.getKey());
 
             for (var edge : currentEdgeList) {
-                Vertex<T> vertexTo = vertices.get(edge.getVertexTo().getKey());
+                Vertex<T> vertexTo = vertices.get(edge.vertexTo().getKey());
                 vertexTo.setDistance(
                         Math.min(
-                                currentVertex.getDistance() + edge.getWeight(),
+                                currentVertex.getDistance() + edge.weight(),
                                 vertexTo.getDistance())
                 );
             }
