@@ -102,11 +102,12 @@ public class Graph<T> {
     /**
      * Dijkstra algorithm.
      *
-     * @param startVertex vertex to start from
+     * @param keyStartVertex key of vertex to start from
      * @return array of vertices with calculated path
      */
-    public List<Vertex<T>> dijkstra(Vertex<T> startVertex) {
+    public List<Vertex<T>> dijkstra(T keyStartVertex) {
 
+        Vertex<T> startVertex = vertices.get(keyStartVertex);
         List<Vertex<T>> result = new ArrayList<>();
 
         vertices.forEach((k, v) -> {

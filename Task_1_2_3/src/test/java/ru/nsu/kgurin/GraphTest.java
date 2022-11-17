@@ -1,5 +1,8 @@
 package ru.nsu.kgurin;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -118,7 +121,7 @@ public class GraphTest {
         graph.addEdge(b, d, 1);
         graph.addEdge(c, b, 1);
 
-        List<Vertex<Integer>> actual = graph.dijkstra(a);
+        List<Vertex<Integer>> actual = graph.dijkstra(1);
 
         //expected
         List<Vertex<Integer>> expected = Arrays.asList(a, c, b, d);
@@ -131,25 +134,34 @@ public class GraphTest {
     @Test
     void matrixOfIncidenceTest() {
         // actual
-        InputStream file =
-                getClass().getClassLoader().getResourceAsStream("Matrix of incidence.txt");
-        assert file != null;
-        Scanner sc = new Scanner(file);
+        int vertexCount;
+        int edgeCount;
 
-        int vertexCount = sc.nextInt();
-        int edgeCount = sc.nextInt();
+        Integer[] vertexArray;
+        int[][] weights;
 
-        Integer[] vertexArray = new Integer[vertexCount];
-        int[][] weights = new int[edgeCount][vertexCount];
+        try(InputStream input =
+                getClass().getClassLoader().getResourceAsStream("matrixOfIncidence.txt")){
+            assert input != null;
+            Scanner sc = new Scanner(input);
 
-        for (int i = 0; i < vertexCount; i++) {
-            vertexArray[i] = sc.nextInt();
-        }
+            vertexCount = sc.nextInt();
+            edgeCount = sc.nextInt();
 
-        for (int i = 0; i < edgeCount; i++) {
-            for (int j = 0; j < vertexCount; j++) {
-                weights[i][j] = sc.nextInt();
+            vertexArray = new Integer[vertexCount];
+            weights = new int[edgeCount][vertexCount];
+
+            for (int i = 0; i < vertexCount; i++) {
+                vertexArray[i] = sc.nextInt();
             }
+
+            for (int i = 0; i < edgeCount; i++) {
+                for (int j = 0; j < vertexCount; j++) {
+                    weights[i][j] = sc.nextInt();
+                }
+            }
+        } catch (IOException e){
+            throw new RuntimeException(e);
         }
 
         //expected
@@ -180,24 +192,30 @@ public class GraphTest {
     @Test
     void matrixOfAdjacencyTest() {
         // actual
-        InputStream file =
-                getClass().getClassLoader().getResourceAsStream("Matrix of adjacency.txt");
-        assert file != null;
-        Scanner sc = new Scanner(file);
+        int vertexCount;
+        Integer[] vertexArray;
+        int[][] weights;
 
-        int vertexCount = sc.nextInt();
+        try(InputStream input = getClass()
+                .getClassLoader().getResourceAsStream("matrixOfAdjacency.txt")) {
+            assert input != null;
+            Scanner sc = new Scanner(input);
+            vertexCount = sc.nextInt();
 
-        Integer[] vertexArray = new Integer[vertexCount];
-        int[][] weights = new int[vertexCount][vertexCount];
+            vertexArray = new Integer[vertexCount];
+            weights = new int[vertexCount][vertexCount];
 
-        for (int i = 0; i < vertexCount; i++) {
-            vertexArray[i] = sc.nextInt();
-        }
-
-        for (int i = 0; i < vertexCount; i++) {
-            for (int j = 0; j < vertexCount; j++) {
-                weights[i][j] = sc.nextInt();
+            for (int i = 0; i < vertexCount; i++) {
+                vertexArray[i] = sc.nextInt();
             }
+
+            for (int i = 0; i < vertexCount; i++) {
+                for (int j = 0; j < vertexCount; j++) {
+                    weights[i][j] = sc.nextInt();
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         //expected
@@ -228,32 +246,40 @@ public class GraphTest {
     @Test
     void listOfAdjacencyTest() {
         // actual
-        InputStream file =
-                getClass().getClassLoader().getResourceAsStream("List of adjacency.txt");
-        assert file != null;
-        Scanner sc = new Scanner(file);
+        int vertexCount;
+        String[] vertexArray;
+        List<String>[] vertexList;
+        List<Integer>[] weights;
 
-        int vertexCount = sc.nextInt();
-        String[] vertexArray = new String[vertexCount];
-        List<String>[] vertexList = new List[vertexCount];
-        List<Integer>[] weights = new List[vertexCount];
+        try(InputStream input =
+                    getClass().getClassLoader().getResourceAsStream("listOfAdjacency.txt")) {
+            assert input != null;
+            Scanner sc = new Scanner(input);
 
-        for (int i = 0; i < vertexCount; i++) {
-            vertexList[i] = new ArrayList<>();
-            weights[i] = new ArrayList<>();
-        }
+            vertexCount = sc.nextInt();
+            vertexArray = new String[vertexCount];
+            vertexList = new List[vertexCount];
+            weights = new List[vertexCount];
 
-        for (int i = 0; i < vertexCount; i++) {
-            vertexArray[i] = sc.next();
-        }
-
-        for (int i = 0; i < vertexCount; i++) {
-            int adjs = sc.nextInt();
-
-            for (int j = 0; j < adjs; j++) {
-                vertexList[i].add(sc.next());
-                weights[i].add(sc.nextInt());
+            for (int i = 0; i < vertexCount; i++) {
+                vertexList[i] = new ArrayList<>();
+                weights[i] = new ArrayList<>();
             }
+
+            for (int i = 0; i < vertexCount; i++) {
+                vertexArray[i] = sc.next();
+            }
+
+            for (int i = 0; i < vertexCount; i++) {
+                int adjs = sc.nextInt();
+
+                for (int j = 0; j < adjs; j++) {
+                    vertexList[i].add(sc.next());
+                    weights[i].add(sc.nextInt());
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
         //expected
@@ -279,5 +305,73 @@ public class GraphTest {
 
         //asserts
         Assertions.assertEquals(expected, actual);
+    }
+
+    //Compound tests
+    @Test
+    void stringGraphTest(){
+        // actual
+        int vertexCount;
+        String[] vertexArray;
+        int[][] weights;
+
+        try(InputStream input = getClass()
+                .getClassLoader().getResourceAsStream("stringGraph.txt")) {
+            assert input != null;
+            Scanner sc = new Scanner(input);
+            vertexCount = sc.nextInt();
+
+            vertexArray = new String[vertexCount];
+            weights = new int[vertexCount][vertexCount];
+
+            for (int i = 0; i < vertexCount; i++) {
+                vertexArray[i] = sc.next();
+            }
+
+            for (int i = 0; i < vertexCount; i++) {
+                for (int j = 0; j < vertexCount; j++) {
+                    weights[i][j] = sc.nextInt();
+                }
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+       //expected
+        Vertex<String> a = new Vertex<>("a");
+        Vertex<String> b = new Vertex<>("b");
+        Vertex<String> c = new Vertex<>("c");
+        Vertex<String> d = new Vertex<>("d");
+
+        Graph<String> expected = new Graph<>();
+
+        expected.addVertex("a");
+        expected.addVertex("b");
+        expected.addVertex("c");
+        expected.addVertex("d");
+
+        expected.addEdge(a, b, 2);
+        expected.addEdge(b, c, 3);
+        expected.addEdge(c, d, 4);
+        expected.addEdge(a, d, 1);
+
+        Graph<String> actual = new Graph<>(vertexArray, weights);
+
+        //asserts
+        Assertions.assertEquals(expected, actual);
+
+        //dijkstra
+        a.setDistance(0);
+        a.setVisited(true);
+        b.setDistance(2);
+        b.setVisited(true);
+        c.setDistance(5);
+        c.setVisited(true);
+        d.setDistance(1);
+        d.setVisited(true);
+        List<Vertex<String>> expectedDijkstra = Arrays.asList(a, d, b, c);
+        List<Vertex<String>> actualDijkstra = actual.dijkstra("a");
+        Assertions.assertEquals(expectedDijkstra, actualDijkstra);
+
     }
 }

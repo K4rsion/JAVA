@@ -60,17 +60,4 @@ public class EdgeTest {
         Assertions.assertEquals(e1, e2);
         Assertions.assertNotEquals(e1, e3);
     }
-
-    @Test
-    void hashCodeTest() {
-        Vertex<Integer> v1 = new Vertex<>(1);
-        Vertex<Integer> v2 = new Vertex<>(2);
-        Vertex<Integer> v3 = new Vertex<>(3);
-        Edge<Integer> e1 = new Edge<>(v1, v2, 1);
-        Edge<Integer> e2 = new Edge<>(v1, v2, 1);
-        Edge<Integer> e3 = new Edge<>(v1, v3, 1);
-
-        Assertions.assertEquals(e1.hashCode(), e2.hashCode());
-        Assertions.assertNotEquals(e1.hashCode(), e3.hashCode());
-    }
 }
