@@ -1,13 +1,12 @@
 package ru.nsu.kgurin;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -140,8 +139,8 @@ public class GraphTest {
         Integer[] vertexArray;
         int[][] weights;
 
-        try(InputStream input =
-                getClass().getClassLoader().getResourceAsStream("matrixOfIncidence.txt")){
+        try (InputStream input =
+                     getClass().getClassLoader().getResourceAsStream("matrixOfIncidence.txt")) {
             assert input != null;
             Scanner sc = new Scanner(input);
 
@@ -160,7 +159,7 @@ public class GraphTest {
                     weights[i][j] = sc.nextInt();
                 }
             }
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
@@ -196,7 +195,7 @@ public class GraphTest {
         Integer[] vertexArray;
         int[][] weights;
 
-        try(InputStream input = getClass()
+        try (InputStream input = getClass()
                 .getClassLoader().getResourceAsStream("matrixOfAdjacency.txt")) {
             assert input != null;
             Scanner sc = new Scanner(input);
@@ -251,8 +250,8 @@ public class GraphTest {
         List<String>[] vertexList;
         List<Integer>[] weights;
 
-        try(InputStream input =
-                    getClass().getClassLoader().getResourceAsStream("listOfAdjacency.txt")) {
+        try (InputStream input =
+                     getClass().getClassLoader().getResourceAsStream("listOfAdjacency.txt")) {
             assert input != null;
             Scanner sc = new Scanner(input);
 
@@ -309,13 +308,13 @@ public class GraphTest {
 
     //Compound tests
     @Test
-    void stringGraphTest(){
+    void stringGraphTest() {
         // actual
         int vertexCount;
         String[] vertexArray;
         int[][] weights;
 
-        try(InputStream input = getClass()
+        try (InputStream input = getClass()
                 .getClassLoader().getResourceAsStream("stringGraph.txt")) {
             assert input != null;
             Scanner sc = new Scanner(input);
@@ -337,7 +336,7 @@ public class GraphTest {
             throw new RuntimeException(e);
         }
 
-       //expected
+        //expected
         Vertex<String> a = new Vertex<>("a");
         Vertex<String> b = new Vertex<>("b");
         Vertex<String> c = new Vertex<>("c");
