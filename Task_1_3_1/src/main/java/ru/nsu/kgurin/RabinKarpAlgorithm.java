@@ -12,11 +12,9 @@ import java.util.List;
 /**
  * Rabin–Karp algorithm is a string-searching algorithm that uses hashing
  * to find an exact match of a pattern string in a text.
- * <p>
  * In class:
  * D is a number of accepted symbols,
  * Q is a prime number for mod (%) operation,
- * <p>
  * In algorithm:
  * p - hash of pattern
  * t - hash of text
@@ -24,8 +22,8 @@ import java.util.List;
 public class RabinKarpAlgorithm {
 
     private final InputStream stream;
-    private final static int D = 256;
-    private final static int Q = 101;
+    private static final int D = 256;
+    private static final int Q = 101;
 
     /**
      * Constructor for my class
@@ -41,27 +39,28 @@ public class RabinKarpAlgorithm {
      *
      * @param pattern pattern we have to find in text
      * @return result is a list of indexes in the text where patterns start
-     * @throws IOException
      */
     public List<Integer> rabinKarp(String pattern) throws IOException {
         try (Reader reader = new BufferedReader(
                 new InputStreamReader(stream, StandardCharsets.UTF_8))) {
             List<Integer> result = new ArrayList<>();
 
-            int M = pattern.length();
+            int patLen = pattern.length();
             int p = 0;
             int t = -1;
             int h = 1;
-            int j, i;
+            int j;
+            int i;
 
-            for (i = 0; i < M - 1; i++) {
+            for (i = 0; i < patLen - 1; i++) {
                 h = (h * D) % Q;
                 p = (D * p + pattern.charAt(i)) % Q;
             }
             p = (D * p + pattern.charAt(i)) % Q;
 
             int nextChar;
-            int start = 0, end = 0;
+            int start = 0;
+            int end = 0;
             int count = 0;
             StringBuilder text = new StringBuilder();
 
@@ -78,12 +77,12 @@ public class RabinKarpAlgorithm {
                 text.append((char) nextChar);
                 end++;
 
-                if (end == M + 1) {
+                if (end == patLen + 1) {
 
                     // Only once
                     if (t == -1) {
                         t = 0;
-                        for (i = 0; i < M; i++) {
+                        for (i = 0; i < patLen; i++) {
                             t = (D * t + text.charAt(i)) % Q;
                         }
                     }
@@ -91,11 +90,12 @@ public class RabinKarpAlgorithm {
                     // If pattern hash is equal to text hash
                     if (p == t) {
                         // Check for characters one by one
-                        for (j = 0; j < M; j++) {
-                            if (text.charAt(j) != pattern.charAt(j))
+                        for (j = 0; j < patLen; j++) {
+                            if (text.charAt(j) != pattern.charAt(j)) {
                                 break;
+                            }
                         }
-                        if (j == M) {
+                        if (j == patLen) {
                             result.add(start);
                         }
                     }
@@ -107,7 +107,7 @@ public class RabinKarpAlgorithm {
                     }
 
                     text.deleteCharAt(0);
-                    end = M;
+                    end = patLen;
                     start++;
                 }
             }
