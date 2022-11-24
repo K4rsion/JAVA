@@ -26,7 +26,7 @@ public class RabinKarpAlgorithm {
     private static final int Q = 101;
 
     /**
-     * Constructor for my class
+     * Constructor for my class.
      *
      * @param stream text to find matches
      */
@@ -35,7 +35,7 @@ public class RabinKarpAlgorithm {
     }
 
     /**
-     * Rabin–Karp algorithm
+     * Rabin–Karp algorithm.
      *
      * @param pattern pattern we have to find in text
      * @return result is a list of indexes in the text where patterns start
