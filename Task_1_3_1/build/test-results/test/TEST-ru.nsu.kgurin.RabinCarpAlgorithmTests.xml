@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.kgurin.RabinCarpAlgorithmTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-11-24T14:45:32" hostname="DESKTOP-BO2GT1O" time="0.211">
+  <properties/>
+  <testcase name="hugeTest()" classname="ru.nsu.kgurin.RabinCarpAlgorithmTests" time="0.211"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

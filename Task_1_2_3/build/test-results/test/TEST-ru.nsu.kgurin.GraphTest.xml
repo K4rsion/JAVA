@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.kgurin.GraphTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-11-23T04:53:45" hostname="DESKTOP-BO2GT1O" time="0.133">
+  <properties/>
+  <testcase name="stringGraphTest()" classname="ru.nsu.kgurin.GraphTest" time="0.081"/>
+  <testcase name="dijkstraTest()" classname="ru.nsu.kgurin.GraphTest" time="0.002"/>
+  <testcase name="matrixOfIncidenceTest()" classname="ru.nsu.kgurin.GraphTest" time="0.011"/>
+  <testcase name="matrixOfAdjacencyTest()" classname="ru.nsu.kgurin.GraphTest" time="0.017"/>
+  <testcase name="removeEdgeTest()" classname="ru.nsu.kgurin.GraphTest" time="0.001"/>
+  <testcase name="addVertexTest()" classname="ru.nsu.kgurin.GraphTest" time="0.001"/>
+  <testcase name="listOfAdjacencyTest()" classname="ru.nsu.kgurin.GraphTest" time="0.009"/>
+  <testcase name="addEdgeTest()" classname="ru.nsu.kgurin.GraphTest" time="0.001"/>
+  <testcase name="removeVertexTest()" classname="ru.nsu.kgurin.GraphTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
