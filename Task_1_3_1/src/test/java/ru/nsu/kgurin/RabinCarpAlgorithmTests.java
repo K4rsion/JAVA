@@ -11,7 +11,8 @@ import java.util.Scanner;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-/** Tests for my realization of Rabin-Karp algorithm
+/**
+ * Tests for my realization of Rabin-Karp algorithm.
  */
 public class RabinCarpAlgorithmTests {
     @Test
