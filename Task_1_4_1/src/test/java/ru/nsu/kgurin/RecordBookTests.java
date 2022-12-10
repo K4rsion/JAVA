@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class RecordBookTests {
     //atomic tests
     @Test
-    public void AddSemesterTest() {
+    public void addSemesterTest() {
         //actual
         RecordBook actual = new RecordBook(5);
         actual.addSemester(1, "Math", 5);
@@ -26,7 +26,7 @@ public class RecordBookTests {
     }
 
     @Test
-    public void RemoveSemesterTest() {
+    public void removeSemesterTest() {
         //actual
         RecordBook actual = new RecordBook(5);
         actual.addSemester(1, "Math", 5);
@@ -42,7 +42,7 @@ public class RecordBookTests {
     }
 
     @Test
-    public void GpaTest() {
+    public void gpaTest() {
         //actual
         RecordBook actual = new RecordBook(5);
         actual.addSemester(1, "Math", 5);
@@ -55,7 +55,7 @@ public class RecordBookTests {
     }
 
     @Test
-    public void ScholarshipTest() {
+    public void scholarshipTest() {
         //actual
         RecordBook actual = new RecordBook(5);
         actual.addSemester(1, "Math", 5);
@@ -67,7 +67,7 @@ public class RecordBookTests {
     }
 
     @Test
-    public void RedDiplomaTest() {
+    public void redDiplomaTest() {
         // Diploma work is less than 5
         RecordBook actualDiploma = new RecordBook(4);
         Assertions.assertFalse(actualDiploma.redDiploma());
@@ -89,34 +89,34 @@ public class RecordBookTests {
 
     //other tests
     @Test
-    public void DifferentMethodsTest() {
-        RecordBook Ivan = new RecordBook(4);
-        Ivan.addSemester(1, "Math", 5);
-        Ivan.addSemester(2, "OOP", 2);
-        Ivan.addSemester(3, "History", 2);
-        Ivan.addSemester(4, "Project", 3);
-        Ivan.addSemester(5, "C", 4);
-        Ivan.addSemester(6, "Philosophy", 5);
-        Ivan.addSemester(7, "English", 3);
-        Ivan.addSemester(8, "C++", 4);
+    public void differentMethodsTest() {
+        RecordBook ivan = new RecordBook(4);
+        ivan.addSemester(1, "Math", 5);
+        ivan.addSemester(2, "OOP", 2);
+        ivan.addSemester(3, "History", 2);
+        ivan.addSemester(4, "Project", 3);
+        ivan.addSemester(5, "C", 4);
+        ivan.addSemester(6, "Philosophy", 5);
+        ivan.addSemester(7, "English", 3);
+        ivan.addSemester(8, "C++", 4);
 
-        Assertions.assertFalse(Ivan.scholarship(3));
-        Assertions.assertFalse(Ivan.redDiploma());
+        Assertions.assertFalse(ivan.scholarship(3));
+        Assertions.assertFalse(ivan.redDiploma());
 
-        RecordBook Elena = new RecordBook(5);
-        Elena.addSemester(1, "Math", 4);
-        Elena.addSemester(2, "OOP", 5);
-        Elena.addSemester(3, "History", 5);
-        Elena.addSemester(4, "Project", 5);
-        Elena.addSemester(5, "C", 3);
-        Elena.addSemester(6, "Philosophy", 5);
-        Elena.addSemester(7, "English", 4);
-        Elena.addSemester(8, "C++", 5);
+        RecordBook elena = new RecordBook(5);
+        elena.addSemester(1, "Math", 4);
+        elena.addSemester(2, "OOP", 5);
+        elena.addSemester(3, "History", 5);
+        elena.addSemester(4, "Project", 5);
+        elena.addSemester(5, "C", 3);
+        elena.addSemester(6, "Philosophy", 5);
+        elena.addSemester(7, "English", 4);
+        elena.addSemester(8, "C++", 5);
 
-        Assertions.assertTrue(Elena.scholarship(3));
-        Assertions.assertTrue(Elena.redDiploma());
+        Assertions.assertTrue(elena.scholarship(3));
+        Assertions.assertTrue(elena.redDiploma());
 
-        Assertions.assertTrue(Elena.gpa() > Ivan.gpa());
+        Assertions.assertTrue(elena.gpa() > ivan.gpa());
 
     }
 }

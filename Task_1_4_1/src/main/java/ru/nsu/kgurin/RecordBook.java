@@ -101,8 +101,8 @@ public class RecordBook {
         }
 
         for (var semester : semesterSubjectMark.entrySet()) {
-            if (semester.getKey() % 2 == 0 &&
-                    semester.getValue().getSubjectMark()
+            if (semester.getKey() % 2 == 0
+                    && semester.getValue().getSubjectMark()
                             .values().stream().anyMatch(s -> s < 4)) {
                 return false;
             }
@@ -136,8 +136,8 @@ public class RecordBook {
             return false;
         }
         RecordBook that = (RecordBook) o;
-        return diplomaWork == that.diplomaWork &&
-                Objects.equals(semesterSubjectMark,
+        return diplomaWork == that.diplomaWork
+                && Objects.equals(semesterSubjectMark,
                         that.semesterSubjectMark);
     }
 
