@@ -14,6 +14,8 @@ public class RecordBook {
 
     /**
      * Constructor for RecordBook class.
+     *
+     * @param diplomaMark mark for diploma work
      */
     public RecordBook(int diplomaMark) {
         this.diplomaWork = diplomaMark;
