@@ -124,25 +124,6 @@ public class RecordBook {
                                 .reduce(0, Integer::sum))
                 .mapToInt(d -> d).sum();
 
-
         return (float) gpa / count;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        RecordBook that = (RecordBook) o;
-        return diplomaWork == that.diplomaWork
-                && ((Marks) semesterSubjectMark.values()).equals(that.semesterSubjectMark.values());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(diplomaWork, semesterSubjectMark);
     }
 }

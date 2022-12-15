@@ -2,7 +2,6 @@ package ru.nsu.kgurin;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * Handle class for wrapping a map: Subject, Mark.

@@ -97,7 +97,7 @@ public class RecordBookTests {
         actualApplication.addSemester(8, "Project", 5);
         Assertions.assertFalse(actualApplication.redDiploma());
     }
-    
+
     //other tests
     @Test
     public void differentMethodsTest() {
