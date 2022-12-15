@@ -51,6 +51,17 @@ public class RecordBookTests {
 
         //asserts
         Assertions.assertEquals((float) (14.0 / 3), actual.gpa());
+    }
+
+    @Test
+    public void gpaForSemesterTest() {
+        //actual
+        RecordBook actual = new RecordBook(5);
+        actual.addSemester(1, "Math", 5);
+        actual.addSemester(2, "History", 4);
+        actual.addSemester(3, "Java", 5);
+
+        //asserts
         Assertions.assertEquals((float) 4.0, actual.gpa(2));
     }
 
@@ -79,14 +90,14 @@ public class RecordBookTests {
         Assertions.assertFalse(actualBadMark.redDiploma());
 
         // Less than 75% of mark is "5"
-        RecordBook actualApllication = new RecordBook(5);
-        actualApllication.addSemester(8, "C", 4);
-        actualApllication.addSemester(8, "English", 4);
-        actualApllication.addSemester(8, "Philosophy", 5);
-        actualApllication.addSemester(8, "Project", 5);
-        Assertions.assertFalse(actualApllication.redDiploma());
+        RecordBook actualApplication = new RecordBook(5);
+        actualApplication.addSemester(8, "C", 4);
+        actualApplication.addSemester(8, "English", 4);
+        actualApplication.addSemester(8, "Philosophy", 5);
+        actualApplication.addSemester(8, "Project", 5);
+        Assertions.assertFalse(actualApplication.redDiploma());
     }
-
+    
     //other tests
     @Test
     public void differentMethodsTest() {

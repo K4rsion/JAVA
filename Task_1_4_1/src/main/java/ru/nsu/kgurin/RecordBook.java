@@ -1,8 +1,11 @@
 package ru.nsu.kgurin;
 
-import java.util.*;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * An implementation of Electronic Record Book.
@@ -135,8 +138,7 @@ public class RecordBook {
         }
         RecordBook that = (RecordBook) o;
         return diplomaWork == that.diplomaWork
-                && Objects.equals(semesterSubjectMark,
-                that.semesterSubjectMark);
+                && ((Marks) semesterSubjectMark.values()).equals(that.semesterSubjectMark.values());
     }
 
     @Override
