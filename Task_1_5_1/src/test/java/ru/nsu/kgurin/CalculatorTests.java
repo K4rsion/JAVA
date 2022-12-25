@@ -73,4 +73,11 @@ public class CalculatorTests {
         Calculator exp = new Calculator(Arrays.asList("cos", "0"));
         Assertions.assertEquals(1, exp.calculate());
     }
+
+    @Test
+    public void incorrectInputTest() throws Exception {
+        Calculator exp = new Calculator(Arrays.asList("asd", "asd"));
+        Exception thrown = Assertions.assertThrows(Exception.class, exp::calculate);
+        Assertions.assertEquals("Incorrect input", thrown.getMessage());
+    }
 }
