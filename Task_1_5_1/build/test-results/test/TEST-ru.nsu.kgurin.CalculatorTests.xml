@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.kgurin.CalculatorTests" tests="9" skipped="0" failures="0" errors="0" timestamp="2022-12-25T07:30:07" hostname="DESKTOP-BO2GT1O" time="0.073">
+  <properties/>
+  <testcase name="divisionTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.054"/>
+  <testcase name="sqrtTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.002"/>
+  <testcase name="additionTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.001"/>
+  <testcase name="powTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.002"/>
+  <testcase name="multiplyTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.001"/>
+  <testcase name="logTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.002"/>
+  <testcase name="subtractionTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.001"/>
+  <testcase name="cosTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.001"/>
+  <testcase name="sinTest()" classname="ru.nsu.kgurin.CalculatorTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
