@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.kgurin.RecordBookTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-12-15T08:44:55" hostname="DESKTOP-BO2GT1O" time="0.076">
+  <properties/>
+  <testcase name="addSemesterTest()" classname="ru.nsu.kgurin.RecordBookTests" time="0.045"/>
+  <testcase name="differentMethodsTest()" classname="ru.nsu.kgurin.RecordBookTests" time="0.016"/>
+  <testcase name="gpaForSemesterTest()" classname="ru.nsu.kgurin.RecordBookTests" time="0.001"/>
+  <testcase name="removeSemesterTest()" classname="ru.nsu.kgurin.RecordBookTests" time="0.005"/>
+  <testcase name="redDiplomaTest()" classname="ru.nsu.kgurin.RecordBookTests" time="0.001"/>
+  <testcase name="gpaTest()" classname="ru.nsu.kgurin.RecordBookTests" time="0.001"/>
+  <testcase name="scholarshipTest()" classname="ru.nsu.kgurin.RecordBookTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
