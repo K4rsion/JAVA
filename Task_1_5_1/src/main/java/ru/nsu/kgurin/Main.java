@@ -18,7 +18,7 @@ public class Main {
         System.out.println("CALCULATOR");
         System.out.println("Use Q to exit.");
 
-        try(BufferedReader input = new BufferedReader(
+        try (BufferedReader input = new BufferedReader(
                 new InputStreamReader(System.in))) {
 
             while (true) {
