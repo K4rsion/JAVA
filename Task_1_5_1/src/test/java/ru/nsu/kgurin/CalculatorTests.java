@@ -1,7 +1,6 @@
 package ru.nsu.kgurin;
 
 import java.util.Arrays;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
