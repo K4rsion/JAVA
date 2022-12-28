@@ -80,4 +80,13 @@ public class CalculatorTests {
         Exception thrown = Assertions.assertThrows(Exception.class, exp::calculate);
         Assertions.assertEquals("Incorrect input", thrown.getMessage());
     }
+
+    //complex test
+    @Test
+    public void complexTest() throws Exception {
+        Calculator exp = new Calculator(Arrays.asList("sin", "cos", "+", "+", "sqrt", "2", "2", "-",
+                "pow", "6", "4", "log", "5"));
+        Assertions.assertEquals(-0.8116709407298298, exp.calculate());
+    }
 }
+

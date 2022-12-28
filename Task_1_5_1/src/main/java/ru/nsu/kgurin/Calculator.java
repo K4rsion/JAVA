@@ -33,20 +33,6 @@ public class Calculator {
             double a;
             double b;
             switch (expression.get(i)) {
-                default:
-                    boolean numeric = true;
-                    double num = 0;
-                    try {
-                        num = Double.parseDouble(expression.get(i));
-                    } catch (NumberFormatException e) {
-                        numeric = false;
-                    }
-                    if (numeric) {
-                        result.add(num);
-                    } else {
-                        throw new Exception("Incorrect input");
-                    }
-                    break;
                 case ("+"):
                     a = result.pop();
                     b = result.pop();
@@ -106,6 +92,19 @@ public class Calculator {
                     a = Math.cos(a);
                     result.add(a);
                     break;
+                default:
+                    boolean numeric = true;
+                    double num = 0;
+                    try {
+                        num = Double.parseDouble(expression.get(i));
+                    } catch (NumberFormatException e) {
+                        numeric = false;
+                    }
+                    if (numeric) {
+                        result.add(num);
+                    } else {
+                        throw new Exception("Incorrect input");
+                    }
             }
         }
         return result.pop();
