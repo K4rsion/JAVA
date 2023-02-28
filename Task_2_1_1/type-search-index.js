@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.kgurin","l":"ThreadSolve.CurrentThread"},{"p":"ru.nsu.kgurin","l":"NotPrime"},{"p":"ru.nsu.kgurin","l":"ParallelStreamSolve"},{"p":"ru.nsu.kgurin","l":"SequentialSolve"},{"p":"ru.nsu.kgurin","l":"ThreadSolve"}]
