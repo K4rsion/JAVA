@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
  */
 public class ThreadTests {
     @Test
-    public void PrimeTestOne() throws InterruptedException {
+    public void primeTest1() throws InterruptedException {
         List<Integer> list = Arrays.asList(1, 2, 3);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 1);
@@ -19,7 +19,7 @@ public class ThreadTests {
     }
 
     @Test
-    public void PrimeTestTwo() throws InterruptedException {
+    public void primeTest2() throws InterruptedException {
         List<Integer> list = Arrays.asList(999917, 999931, 999953, 999959, 999961, 999979, 999983);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 2);
@@ -28,7 +28,7 @@ public class ThreadTests {
     }
 
     @Test
-    public void PrimeTestThree() throws InterruptedException {
+    public void primeTest3() throws InterruptedException {
         List<Integer> list = Arrays.asList(945031, 945037, 945059, 945089, 945103, 945143, 945151, 945179, 945209, 945211);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 3);
@@ -37,7 +37,7 @@ public class ThreadTests {
     }
 
     @Test
-    public void CompositeTestOne() throws InterruptedException {
+    public void compositeTest1() throws InterruptedException {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 2);
@@ -46,7 +46,7 @@ public class ThreadTests {
     }
 
     @Test
-    public void CompositeTestTwo() throws InterruptedException {
+    public void compositeTest2() throws InterruptedException {
         List<Integer> list = Arrays.asList(94530, 945030, 945050, 945210, 945210);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 3);
@@ -55,7 +55,7 @@ public class ThreadTests {
     }
 
     @Test
-    public void CompositeTestThree() throws InterruptedException {
+    public void compositeTest3() throws InterruptedException {
         List<Integer> list = Arrays.asList(945032, 945037, 945059, 945089, 945103, 945143, 945151, 945179, 945209, 945211);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 3);
