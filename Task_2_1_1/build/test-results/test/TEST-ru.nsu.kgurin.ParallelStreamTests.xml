@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.kgurin.ParallelStreamTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-02-28T08:38:23" hostname="DESKTOP-BO2GT1O" time="0.091">
+  <properties/>
+  <testcase name="CompositeTest1()" classname="ru.nsu.kgurin.ParallelStreamTests" time="0.07"/>
+  <testcase name="CompositeTest2()" classname="ru.nsu.kgurin.ParallelStreamTests" time="0.002"/>
+  <testcase name="CompositeTest3()" classname="ru.nsu.kgurin.ParallelStreamTests" time="0.005"/>
+  <testcase name="PrimeTest1()" classname="ru.nsu.kgurin.ParallelStreamTests" time="0.006"/>
+  <testcase name="PrimeTest2()" classname="ru.nsu.kgurin.ParallelStreamTests" time="0.003"/>
+  <testcase name="PrimeTest3()" classname="ru.nsu.kgurin.ParallelStreamTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
