@@ -20,7 +20,8 @@ public class ThreadTests {
 
     @Test
     public void primeTest2() throws InterruptedException {
-        List<Integer> list = Arrays.asList(999917, 999931, 999953, 999959, 999961, 999979, 999983);
+        List<Integer> list = Arrays.asList(999917, 999931, 999953, 999959,
+                999961, 999979, 999983);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 2);
         boolean exp = false;
@@ -29,7 +30,8 @@ public class ThreadTests {
 
     @Test
     public void primeTest3() throws InterruptedException {
-        List<Integer> list = Arrays.asList(945031, 945037, 945059, 945089, 945103, 945143, 945151, 945179, 945209, 945211);
+        List<Integer> list = Arrays.asList(945031, 945037, 945059, 945089, 945103,
+                945143, 945151, 945179, 945209, 945211);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 3);
         boolean exp = false;
@@ -56,7 +58,8 @@ public class ThreadTests {
 
     @Test
     public void compositeTest3() throws InterruptedException {
-        List<Integer> list = Arrays.asList(945032, 945037, 945059, 945089, 945103, 945143, 945151, 945179, 945209, 945211);
+        List<Integer> list = Arrays.asList(945032, 945037, 945059, 945089, 945103,
+                945143, 945151, 945179, 945209, 945211);
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(list, 3);
         boolean exp = true;
