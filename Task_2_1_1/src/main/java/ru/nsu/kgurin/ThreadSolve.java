@@ -19,7 +19,7 @@ public class ThreadSolve {
         /**
          * CurrentThread constructor.
          *
-         * @param numbers
+         * @param numbers list of numbers
          */
         public CurrentThread(List<Integer> numbers) {
             this.numbers = numbers;
@@ -41,7 +41,7 @@ public class ThreadSolve {
      * @param numbers    list of numbers to check
      * @param threadsNum number of threads to use
      * @return true if there is composite number, and false otherwise
-     * @throws InterruptedException
+     * @throws InterruptedException when threads conflict
      */
     public Boolean threadSolve(List<Integer> numbers, int threadsNum) throws InterruptedException {
         int len = numbers.size();

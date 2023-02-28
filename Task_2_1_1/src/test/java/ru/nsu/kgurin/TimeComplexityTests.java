@@ -1,11 +1,13 @@
 package ru.nsu.kgurin;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * Complex tests for time measuring.
+ */
 public class TimeComplexityTests {
     private final long size = 10000000;
     private final List<Integer> primeList = initPrimeList();
@@ -39,7 +41,7 @@ public class TimeComplexityTests {
     }
 
     @Test
-    public void ThreadsPrimeTest1() throws InterruptedException {
+    public void ThreadsPrimeTestOne() throws InterruptedException {
         long time = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(primeList, 1);
@@ -50,7 +52,7 @@ public class TimeComplexityTests {
     }
 
     @Test
-    public void ThreadsPrimeTest2() throws InterruptedException {
+    public void ThreadsPrimeTestTwo() throws InterruptedException {
         long time = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(primeList, 2);
@@ -61,7 +63,7 @@ public class TimeComplexityTests {
     }
 
     @Test
-    public void ThreadsPrimeTest4() throws InterruptedException {
+    public void ThreadsPrimeTestThree() throws InterruptedException {
         long time = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(primeList, 4);
@@ -72,7 +74,7 @@ public class TimeComplexityTests {
     }
 
     @Test
-    public void ThreadsPrimeTest8() throws InterruptedException {
+    public void ThreadsPrimeTestFour() throws InterruptedException {
         long time = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(primeList, 8);
@@ -83,7 +85,7 @@ public class TimeComplexityTests {
     }
 
     @Test
-    public void ThreadsPrimeTest32() throws InterruptedException {
+    public void ThreadsPrimeTestFive() throws InterruptedException {
         long time = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(primeList, 32);
@@ -94,7 +96,7 @@ public class TimeComplexityTests {
     }
 
     @Test
-    public void ThreadsPrimeTest64() throws InterruptedException {
+    public void ThreadsPrimeTestSix() throws InterruptedException {
         long time = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(primeList, 64);
@@ -105,7 +107,7 @@ public class TimeComplexityTests {
     }
 
     @Test
-    public void ThreadsPrimeTest128() throws InterruptedException {
+    public void ThreadsPrimeTestSeven() throws InterruptedException {
         long time = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
         boolean act = test.threadSolve(primeList, 128);
