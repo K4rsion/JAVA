@@ -23,6 +23,11 @@ public class TimeComplexityTests {
         return result;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long sequentialPrimeTest() {
         long timeStart = System.currentTimeMillis();
         SequentialSolve.sequentialSolve(primeList);
@@ -31,6 +36,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long parallelStreamPrimeTest() {
         long timeStart = System.currentTimeMillis();
         ParallelStreamSolve.parallelStreamSolve(primeList);
@@ -39,6 +49,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest1() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -48,6 +63,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest2() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -57,6 +77,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest4() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -66,6 +91,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest8() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -75,6 +105,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest16() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -84,6 +119,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest32() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -93,6 +133,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest64() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -102,6 +147,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest128() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -111,6 +161,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest256() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -120,6 +175,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest512() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
@@ -129,6 +189,11 @@ public class TimeComplexityTests {
         return timeFinish;
     }
 
+    /**
+     * Test.
+     *
+     * @return timeFinish
+     */
     public long threadsPrimeTest1024() throws InterruptedException {
         long timeStart = System.currentTimeMillis();
         ThreadSolve test = new ThreadSolve();
