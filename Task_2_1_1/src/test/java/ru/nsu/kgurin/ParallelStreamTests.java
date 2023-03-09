@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
  */
 public class ParallelStreamTests {
     @Test
-    public void primeTest1() throws InterruptedException {
+    public void primeTest1() {
         List<Integer> list = Arrays.asList(1, 2, 3);
         boolean act = ParallelStreamSolve.parallelStreamSolve(list);
         boolean exp = false;
@@ -18,7 +18,7 @@ public class ParallelStreamTests {
     }
 
     @Test
-    public void primeTest2() throws InterruptedException {
+    public void primeTest2() {
         List<Integer> list = Arrays.asList(999917, 999931, 999953, 999959, 999961, 999979, 999983);
         boolean act = ParallelStreamSolve.parallelStreamSolve(list);
         boolean exp = false;
@@ -26,7 +26,7 @@ public class ParallelStreamTests {
     }
 
     @Test
-    public void primeTest3() throws InterruptedException {
+    public void primeTest3() {
         List<Integer> list = Arrays.asList(945031, 945037, 945059, 945089,
                 945103, 945143, 945151, 945179, 945209, 945211);
         boolean act = ParallelStreamSolve.parallelStreamSolve(list);
@@ -35,7 +35,7 @@ public class ParallelStreamTests {
     }
 
     @Test
-    public void compositeTest1() throws InterruptedException {
+    public void compositeTest1() {
         List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
         boolean act = ParallelStreamSolve.parallelStreamSolve(list);
         boolean exp = true;
@@ -43,7 +43,7 @@ public class ParallelStreamTests {
     }
 
     @Test
-    public void compositeTest2() throws InterruptedException {
+    public void compositeTest2() {
         List<Integer> list = Arrays.asList(94530, 945030, 945050, 945210, 945210);
         boolean act = ParallelStreamSolve.parallelStreamSolve(list);
         boolean exp = true;
@@ -51,7 +51,7 @@ public class ParallelStreamTests {
     }
 
     @Test
-    public void compositeTest3() throws InterruptedException {
+    public void compositeTest3() {
         List<Integer> list = Arrays.asList(945032, 945037, 945059, 945089, 945103,
                 945143, 945151, 945179, 945209, 945211);
         boolean act = ParallelStreamSolve.parallelStreamSolve(list);
