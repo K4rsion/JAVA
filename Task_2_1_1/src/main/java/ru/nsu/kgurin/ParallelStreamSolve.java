@@ -12,7 +12,7 @@ public class ParallelStreamSolve {
      * @param numbers list of numbers to check
      * @return true if there is composite number, and false otherwise
      */
-    public static Boolean parallelStreamSolve(List<Integer> numbers) {
+    public static boolean parallelStreamSolve(List<Integer> numbers) {
         return numbers.parallelStream().anyMatch(NotPrime::notPrime);
     }
 
