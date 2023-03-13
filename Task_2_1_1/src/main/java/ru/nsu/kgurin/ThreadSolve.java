@@ -43,7 +43,7 @@ public class ThreadSolve {
      * @return true if there is composite number, and false otherwise
      * @throws InterruptedException when threads conflict
      */
-    public Boolean threadSolve(List<Integer> numbers, int threadsNum) throws InterruptedException {
+    public boolean threadSolve(List<Integer> numbers, int threadsNum) throws InterruptedException {
         int len = numbers.size();
         int part;
         if (numbers.size() >= threadsNum) {

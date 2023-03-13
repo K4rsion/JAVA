@@ -12,7 +12,7 @@ public class SequentialSolve {
      * @param numbers list of numbers to check
      * @return true if there is composite number, and false otherwise
      */
-    public static Boolean sequentialSolve(List<Integer> numbers) {
+    public static boolean sequentialSolve(List<Integer> numbers) {
         return numbers.stream().anyMatch(NotPrime::notPrime);
     }
 }
