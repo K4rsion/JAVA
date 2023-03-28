@@ -1,0 +1,10 @@
+-ParallelStream test with prime numbers: 337
+(32 thread test with prime numbers: 269
+(64 thread test with prime numbers: 205
+'1 thread test with prime numbers: 718
+'2 thread test with prime numbers: 369
+'4 thread test with prime numbers: 243
+'8 thread test with prime numbers: 152
+	)Sequential test with prime numbers: 750
+
+)128 thread test with prime numbers: 221
