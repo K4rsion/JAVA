@@ -1,0 +1,10 @@
+[
+    {
+      "name": "MerleStreet",
+      "capacity": 5
+    },
+    {
+      "name": "BaconStreet",
+      "capacity": 7
+    }
+]
