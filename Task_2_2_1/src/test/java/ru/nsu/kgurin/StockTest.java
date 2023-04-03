@@ -73,6 +73,6 @@ public class StockTest {
         );
         stock.addItem();
         stock.addItem();
-        Assertions.assertTrue( stock.isFull());
+        Assertions.assertTrue(stock.isFull());
     }
 }
