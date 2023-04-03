@@ -13,7 +13,7 @@ public class Deliverer {
     boolean isDelivering = false;
 
     /**
-     * Empty constructor for Jackson
+     * Empty constructor for Jackson.
      */
     public Deliverer() {
     }
@@ -27,6 +27,7 @@ public class Deliverer {
 
     /**
      * Check if deliverer's bag is full.
+     *
      * @return true if bag is full, false otherwise
      */
     public boolean isFull() {
@@ -42,6 +43,7 @@ public class Deliverer {
 
     /**
      * Get state of deliverer.
+     *
      * @return state of deliverer
      */
     public boolean getIsDelivering() {
@@ -57,6 +59,7 @@ public class Deliverer {
 
     /**
      * Get skill of deliverer.
+     *
      * @return skill of deliverer
      */
     public int getSkill() {
@@ -65,7 +68,8 @@ public class Deliverer {
 
     /**
      * Get name of deliverer.
-     * @return  name of deliverer
+     *
+     * @return name of deliverer
      */
     public String getName() {
         return name;
@@ -73,6 +77,7 @@ public class Deliverer {
 
     /**
      * Get capacity of deliverer.
+     *
      * @return capacity of deliverer
      */
     public int getCapacity() {

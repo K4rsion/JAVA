@@ -9,7 +9,7 @@ public class Stock {
     int occupied = 0;
 
     /**
-     * Empty constructor for Jackson
+     * Empty constructor for Jackson.
      */
     public Stock() {
     }

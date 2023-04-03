@@ -9,7 +9,7 @@ public class Baker {
     boolean isCooking = false;
 
     /**
-     * Empty constructor for Jackson
+     * Empty constructor for Jackson.
      */
     public Baker() {
     }
