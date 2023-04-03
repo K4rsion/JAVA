@@ -12,9 +12,10 @@ public class Staff {
 
     /**
      * Constructor.
-     * @param allBakers list of bakers
+     *
+     * @param allBakers     list of bakers
      * @param allDeliverers list of deliverers
-     * @param allStocks list of stocks
+     * @param allStocks     list of stocks
      */
     public Staff(List<Baker> allBakers, List<Deliverer> allDeliverers, List<Stock> allStocks) {
         bakers = allBakers;
@@ -24,6 +25,7 @@ public class Staff {
 
     /**
      * Get list of bakers.
+     *
      * @return list of bakers
      */
     public List<Baker> getBakers() {
@@ -32,6 +34,7 @@ public class Staff {
 
     /**
      * Get list of deliverers.
+     *
      * @return list of deliverers
      */
     public List<Deliverer> getDeliverers() {
@@ -40,6 +43,7 @@ public class Staff {
 
     /**
      * Get list of stocks.
+     *
      * @return list of stocks
      */
     public List<Stock> getStocks() {

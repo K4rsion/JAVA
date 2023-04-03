@@ -8,7 +8,7 @@ public class Order {
     int complexity;
 
     /**
-     * Empty constructor for Jackson
+     * Empty constructor for Jackson.
      */
     public Order() {
     }
