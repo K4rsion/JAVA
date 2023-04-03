@@ -29,8 +29,9 @@ public class CreateOrder implements Runnable {
      * @param order list of all orders
      * @param staff staff of pizzeria(bakers, stocks, deliverers)
      */
-    public static void createAndStart(Order order, Staff staff) {
+    public static void createAndStart(Order order, Staff staff, List<Thread> threads) {
         CreateOrder currentOrder = new CreateOrder(order, staff);
+        threads.add(currentOrder.order);
         currentOrder.order.start();
     }
 
@@ -122,6 +123,7 @@ public class CreateOrder implements Runnable {
                 + ": Курьер выполнил заказ и освободился");
         deliverer.clearBag();
         deliverer.changeIsDelivering();
+        System.out.println(orderDetails.getId() + ": Заказ завершен!");
     }
 
 

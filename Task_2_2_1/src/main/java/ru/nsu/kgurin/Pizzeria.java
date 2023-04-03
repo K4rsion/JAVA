@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,11 +42,16 @@ public class Pizzeria {
         Staff staff = new Staff(bakers, deliverers, stocks);
 
         System.out.println("Пиццерия открыта и готова к принятию заказов.");
+        List<Thread> threads = new ArrayList<>();
         for (var i : queue) {
-            CreateOrder.createAndStart(i, staff);
+            CreateOrder.createAndStart(i, staff, threads);
             Thread.sleep(2000);
         }
-        Thread.currentThread().join();
+
+        for (var i : threads) {
+            i.join();
+        }
+
         System.out.println("Пиццерия закрыта.");
     }
 }
