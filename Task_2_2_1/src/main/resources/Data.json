@@ -28,19 +28,19 @@
   "orders": [
     {
       "id": "1",
-      "complexity": 500
+      "complexity": 50
     },
     {
       "id": "2",
-      "complexity": 650
+      "complexity": 65
     },
     {
       "id": "3",
-      "complexity": 800
+      "complexity": 80
     },
     {
       "id": "4",
-      "complexity": 801
+      "complexity": 80
     }
   ]
 }
