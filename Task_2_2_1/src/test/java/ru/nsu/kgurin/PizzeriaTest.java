@@ -2,6 +2,8 @@ package ru.nsu.kgurin;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 /**
  * Tests.
  */
@@ -11,7 +13,9 @@ public class PizzeriaTest {
         try {
             Main.main(new String[]{});
         } catch (NullPointerException e) {
-            e.printStackTrace();
+            System.err.println(Arrays.toString(e.getStackTrace()));
+            throw new NullPointerException();
         }
+
     }
 }
