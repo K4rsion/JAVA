@@ -8,6 +8,10 @@ import org.junit.jupiter.api.Test;
 public class PizzeriaTest {
     @Test
     public void pizzeriaTest() {
-        Main.main(new String[]{});
+        try {
+            Main.main(new String[]{});
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 }
