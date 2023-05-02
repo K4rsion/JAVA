@@ -2,8 +2,6 @@ package ru.nsu.kgurin;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 /**
  * Tests.
  */
