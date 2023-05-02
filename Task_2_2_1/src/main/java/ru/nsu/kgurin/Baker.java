@@ -1,50 +1,64 @@
 package ru.nsu.kgurin;
 
 /**
- * Baker class.
+ * Class implementing bakers.
  */
-public class Baker {
-    String name;
+public class Baker implements Runnable {
     int skill;
-    boolean isCooking = false;
+    String name;
+    boolean isBusy = false;
 
     /**
-     * Empty constructor for Jackson.
-     */
-    public Baker() {
-    }
-
-    /**
-     * Change state of baker.
-     */
-    public void changeIsCooking() {
-        isCooking = !isCooking;
-    }
-
-    /**
-     * Get skill of baker.
+     * Constructor for ru.nsu.kgurin.Baker class.
      *
-     * @return skill of baker
+     * @param skill skill of baker
+     * @param name  name of baker
      */
-    public int getSkill() {
-        return skill;
+    public Baker(int skill, String name) {
+        this.skill = skill;
+        this.name = name;
     }
 
     /**
-     * Get state of baker.
+     * Method to check if baker is busy or not.
      *
-     * @return state of baker
+     * @return true if busy, false otherwise
      */
-    public boolean getIsCooking() {
-        return isCooking;
+    public boolean isBusy() {
+        return isBusy;
     }
 
     /**
-     * Get name of baker.
+     * Method to implement cooking process.
      *
-     * @return name of baker
+     * @param order current order
+     * @throws InterruptedException if interrupted
      */
-    public String getName() {
-        return name;
+    public void cook(Order order) throws InterruptedException {
+        System.out.println("START(cooking): [" + order.getId() + "] <- " + name);
+        Thread.sleep(order.getComplexity() / skill * 100L);
+        System.out.println("END(cooking): [" + order.getId() + "] <- " + name);
+    }
+
+    /**
+     * Cook while being interrupted.
+     */
+    @Override
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            isBusy = true;
+            try {
+                Order order = Main.takeFromQueue();
+                if (order == null) {
+                    isBusy = false;
+                    return;
+                }
+                cook(order);
+                Main.putInStock(order);
+            } catch (InterruptedException e) {
+                System.out.println("Bakers handled all orders");
+            }
+            isBusy = false;
+        }
     }
 }

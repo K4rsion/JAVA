@@ -1,86 +1,76 @@
 package ru.nsu.kgurin;
 
-/**
- * Deliverer class.
- */
-public class Deliverer {
+import java.util.Arrays;
+import java.util.List;
+import java.util.OptionalDouble;
 
-    String name;
+/**
+ * Class implementing deliverers.
+ */
+public class Deliverer implements Runnable {
     int capacity;
     int skill;
-
-    int occupied = 0;
-    boolean isDelivering = false;
-
-    /**
-     * Empty constructor for Jackson.
-     */
-    public Deliverer() {
-    }
+    String name;
+    boolean isBusy = false;
 
     /**
-     * Clear deliverer's bag from items.
-     */
-    public void clearBag() {
-        occupied = 0;
-    }
-
-    /**
-     * Check if deliverer's bag is full.
+     * Constructor for ru.nsu.kgurin.Deliverer class.
      *
-     * @return true if bag is full, false otherwise
+     * @param skill    skill of deliverer
+     * @param name     name of deliverer
+     * @param capacity bag capacity of deliverer
      */
-    public boolean isFull() {
-        return capacity <= occupied;
+    public Deliverer(int capacity, int skill, String name) {
+        this.capacity = capacity;
+        this.skill = skill;
+        this.name = name;
     }
 
     /**
-     * Change state of deliverer.
-     */
-    public void changeIsDelivering() {
-        isDelivering = !isDelivering;
-    }
-
-    /**
-     * Get state of deliverer.
+     * Method to check if deliverer is busy or not.
      *
-     * @return state of deliverer
+     * @return true if busy, false otherwise
      */
-    public boolean getIsDelivering() {
-        return isDelivering;
+    public boolean isBusy() {
+        return isBusy;
     }
 
     /**
-     * Add item to bag.
-     */
-    public void addItemToBag() {
-        occupied++;
-    }
-
-    /**
-     * Get skill of deliverer.
+     * Method to implement delivering process.
      *
-     * @return skill of deliverer
+     * @param orders list of orders
+     * @throws InterruptedException if interrupted
      */
-    public int getSkill() {
-        return skill;
+    public void deliver(List<Order> orders) throws InterruptedException {
+        System.out.println("START(delivering): " + Arrays.toString(orders.toArray()) + " <- " + name);
+        OptionalDouble average = orders.stream()
+                .mapToInt(Order::getComplexity)
+                .average();
+        if (average.isPresent()) {
+            double result = average.getAsDouble();
+            Thread.sleep((long) (result / skill * 100L));
+        }
+        System.out.println("END(delivering): " + Arrays.toString(orders.toArray()) + " <- " + name);
     }
 
     /**
-     * Get name of deliverer.
-     *
-     * @return name of deliverer
+     * Deliver while being interrupted.
      */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * Get capacity of deliverer.
-     *
-     * @return capacity of deliverer
-     */
-    public int getCapacity() {
-        return capacity;
+    @Override
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            isBusy = true;
+            try {
+                List<Order> orders = Main.takeFromStock(capacity);
+                if (orders.isEmpty()) {
+                    isBusy = false;
+                    return;
+                }
+                deliver(orders);
+            } catch (InterruptedException e) {
+                System.out.println("Deliverers handled all orders");
+            }
+            isBusy = false;
+        }
     }
 }

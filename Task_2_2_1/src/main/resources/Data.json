@@ -1,0 +1,46 @@
+{
+  "bakers": [
+    {
+      "name": "Albert",
+      "skill": 6
+    },
+    {
+      "name": "William",
+      "skill": 4
+    },
+    {
+      "name": "Route",
+      "skill": 3
+    }
+  ],
+  "deliverers": [
+    {
+      "name": "Jake",
+      "capacity": 2,
+      "skill": 7
+    },
+    {
+      "name": "Nelson",
+      "capacity": 3,
+      "skill": 5
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "complexity": 500
+    },
+    {
+      "id": "2",
+      "complexity": 650
+    },
+    {
+      "id": "3",
+      "complexity": 800
+    },
+    {
+      "id": "4",
+      "complexity": 801
+    }
+  ]
+}

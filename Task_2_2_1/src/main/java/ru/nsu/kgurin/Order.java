@@ -1,34 +1,48 @@
 package ru.nsu.kgurin;
 
 /**
- * Class for describing current order.
+ * Class implementing order.
  */
 public class Order {
-    String id;
     int complexity;
+    String id;
 
     /**
-     * Empty constructor for Jackson.
+     * Constructor for ru.nsu.kgurin.Order class.
+     *
+     * @param complexity complexity of current order
+     * @param id         id of current order
      */
-    public Order() {
+    public Order(int complexity, String id) {
+        this.complexity = complexity;
+        this.id = id;
     }
 
     /**
-     * Get order ID.
+     * Method to get complexity of current order.
      *
-     * @return order ID
+     * @return complexity of current order
+     */
+    public int getComplexity() {
+        return complexity;
+    }
+
+    /**
+     * Method to get id of current order.
+     *
+     * @return id of current order
      */
     public String getId() {
         return id;
     }
 
     /**
-     * Get order complexity(for calculating necessary
-     * time for bakers and deliverers to handle this order).
+     * Method to get order as string.
      *
-     * @return order complexity
+     * @return order as string
      */
-    public int getComplexity() {
-        return complexity;
+    @Override
+    public String toString() {
+        return id;
     }
 }
