@@ -1,12 +1,13 @@
 package ru.nsu.kgurin;
 
+import static java.util.concurrent.Executors.newFixedThreadPool;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
-import static java.util.concurrent.Executors.newFixedThreadPool;
 
 /**
  * ru.nsu.kgurin.Main class.
