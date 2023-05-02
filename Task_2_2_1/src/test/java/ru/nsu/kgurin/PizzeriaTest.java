@@ -8,6 +8,6 @@ import org.junit.jupiter.api.Test;
 public class PizzeriaTest {
     @Test
     public void pizzeriaTest() {
-        Main.main(null);
+        Main.main(new String[]{});
     }
 }
