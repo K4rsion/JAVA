@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10};
+var data = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -132,7 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Order</span>
 extends java.lang.Object</pre>
-<div class="block">Class for describing current order.</div>
+<div class="block">Class implementing order.</div>
 </li>
 </ul>
 </div>
@@ -153,9 +153,10 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">Order</a></span>()</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(int,java.lang.String)">Order</a></span>&#8203;(int&nbsp;complexity,
+     java.lang.String&nbsp;id)</code></th>
 <td class="colLast">
-<div class="block">Empty constructor for Jackson.</div>
+<div class="block">Constructor for ru.nsu.kgurin.Order class.</div>
 </td>
 </tr>
 </table>
@@ -180,15 +181,21 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getComplexity()">getComplexity</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Get order complexity(for calculating necessary
- time for bakers and deliverers to handle this order).</div>
+<div class="block">Method to get complexity of current order.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#getId()">getId</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Get order ID.</div>
+<div class="block">Method to get id of current order.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Method to get order as string.</div>
 </td>
 </tr>
 </table>
@@ -197,7 +204,7 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
-<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
+<code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
 </li>
 </ul>
@@ -215,14 +222,20 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;()">
+<a id="&lt;init&gt;(int,java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Order</h4>
-<pre>public&nbsp;Order()</pre>
-<div class="block">Empty constructor for Jackson.</div>
+<pre>public&nbsp;Order&#8203;(int&nbsp;complexity,
+             java.lang.String&nbsp;id)</pre>
+<div class="block">Constructor for ru.nsu.kgurin.Order class.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>complexity</code> - complexity of current order</dd>
+<dd><code>id</code> - id of current order</dd>
+</dl>
 </li>
 </ul>
 </li>
@@ -235,6 +248,20 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="getComplexity()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getComplexity</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;getComplexity()</pre>
+<div class="block">Method to get complexity of current order.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>complexity of current order</dd>
+</dl>
+</li>
+</ul>
 <a id="getId()">
 <!--   -->
 </a>
@@ -242,25 +269,26 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getId</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;getId()</pre>
-<div class="block">Get order ID.</div>
+<div class="block">Method to get id of current order.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>order ID</dd>
+<dd>id of current order</dd>
 </dl>
 </li>
 </ul>
-<a id="getComplexity()">
+<a id="toString()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getComplexity</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;getComplexity()</pre>
-<div class="block">Get order complexity(for calculating necessary
- time for bakers and deliverers to handle this order).</div>
+<h4>toString</h4>
+<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString()</pre>
+<div class="block">Method to get order as string.</div>
 <dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>order complexity</dd>
+<dd>order as string</dd>
 </dl>
 </li>
 </ul>
