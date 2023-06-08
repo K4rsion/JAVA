@@ -23,6 +23,11 @@
       "name": "Nelson",
       "capacity": 3,
       "skill": 5
+    },
+    {
+      "name": "Gocha",
+      "capacity": 3,
+      "skill": 8
     }
   ],
   "orders": [

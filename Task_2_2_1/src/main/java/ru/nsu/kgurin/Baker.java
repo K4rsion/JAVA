@@ -35,9 +35,11 @@ public class Baker implements Runnable {
      * @throws InterruptedException if interrupted
      */
     public void cook(Order order) throws InterruptedException {
+        isBusy = true;
         System.out.println("START(cooking): [" + order.getId() + "] <- " + name);
         Thread.sleep(order.getComplexity() / skill * 100L);
         System.out.println("END(cooking): [" + order.getId() + "] <- " + name);
+        isBusy = false;
     }
 
     /**
@@ -46,19 +48,18 @@ public class Baker implements Runnable {
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-            isBusy = true;
             try {
-                Order order = Main.takeFromQueue();
-                if (order == null) {
-                    isBusy = false;
-                    return;
+                synchronized (Main.queue) {
+                    while (Main.queue.isEmpty()) {
+                        Main.queue.wait();
+                    }
                 }
+                Order order = Main.takeFromQueue();
                 cook(order);
                 Main.putInStock(order);
             } catch (InterruptedException e) {
-                System.out.println("Bakers handled all orders");
+                break;
             }
-            isBusy = false;
         }
     }
 }
