@@ -61,4 +61,8 @@ public class JsonData {
     public List<Order> getOrders() {
         return orders;
     }
+
+    public Order getOrder(int i) {
+        return orders.get(i);
+    }
 }

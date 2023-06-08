@@ -42,17 +42,13 @@ public class Deliverer implements Runnable {
      * @throws InterruptedException if interrupted
      */
     public void deliver(List<Order> orders) throws InterruptedException {
+        isBusy = true;
         System.out.println("START(delivering): "
                 + Arrays.toString(orders.toArray()) + " <- " + name);
-        OptionalDouble average = orders.stream()
-                .mapToInt(Order::getComplexity)
-                .average();
-        if (average.isPresent()) {
-            double result = average.getAsDouble();
-            Thread.sleep((long) (result / skill * 100L));
-        }
+        Thread.sleep((long) (orders.get(0).complexity / skill * 1000L));
         System.out.println("END(delivering): "
                 + Arrays.toString(orders.toArray()) + " <- " + name);
+        isBusy = false;
     }
 
     /**
@@ -61,18 +57,19 @@ public class Deliverer implements Runnable {
     @Override
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
-            isBusy = true;
             try {
-                List<Order> orders = Main.takeFromStock(capacity);
-                if (orders.isEmpty()) {
-                    isBusy = false;
-                    return;
+                synchronized (Main.stock) {
+                    while (Main.stock.isEmpty()) {
+                        Main.stock.wait();
+                    }
                 }
-                deliver(orders);
+                List<Order> orders = Main.takeFromStock(capacity);
+                if (!orders.isEmpty()) {
+                    deliver(orders);
+                }
             } catch (InterruptedException e) {
-                System.out.println("Deliverers handled all orders");
+                break;
             }
-            isBusy = false;
         }
     }
 }

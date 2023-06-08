@@ -2,34 +2,31 @@ package ru.nsu.kgurin;
 
 import static java.util.concurrent.Executors.newFixedThreadPool;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.TimeUnit;
 
 /**
- * ru.nsu.kgurin.Main class.
+ * Main pizzeria class.
  */
 public class Main {
     public static ExecutorService bakersPool;
     public static ExecutorService deliverersPool;
     public static List<Baker> bakers = new ArrayList<>();
     public static List<Deliverer> deliverers = new ArrayList<>();
-    public static volatile BlockingDeque<Order> queue = new LinkedBlockingDeque<>();
-    public static volatile BlockingDeque<Order> stock = new LinkedBlockingDeque<>();
+    public static final Deque<Order> queue = new ArrayDeque<>();
+    public static final Deque<Order> stock = new ArrayDeque<>();
 
     /**
-     * Here we collect all data about personal, start and
-     * close pizzeria.
+     * Upload all data about employee, start and end pizzeria.
      *
      * @param args args
      */
     public static void main(String[] args) {
         JsonData jsonData = new JsonData("data.json");
 
-        queue.addAll(jsonData.getOrders());
         bakers = jsonData.getBakers();
         deliverers = jsonData.getDeliverers();
 
@@ -37,70 +34,77 @@ public class Main {
         deliverersPool = newFixedThreadPool(deliverers.size());
 
         openPizzeria();
-        closePizzeria();
+        for (int i = 0; i < jsonData.getOrders().size(); i++) {
+            synchronized (queue) {
+                queue.addLast(jsonData.getOrder(i));
+                queue.notifyAll();
+            }
+        }
+        java.util.Timer timer = new java.util.Timer();
+        timer.schedule(new java.util.TimerTask() {
+            @Override
+            public void run() {
+                System.out.println("Closing pizzeria...");
+                closePizzeria();
+                System.out.println("Pizzeria is closed");
+                timer.cancel();
+            }
+        }, 20000);
     }
 
     /**
-     * Method to open pizzeria.
+     * To open pizzeria we need submit all employee.
      */
     public static void openPizzeria() {
-        bakers.forEach(bakersPool::execute);
-        deliverers.forEach(deliverersPool::execute);
+        bakers.forEach(bakersPool::submit);
+        deliverers.forEach(deliverersPool::submit);
     }
 
     /**
-     * Method to close pizzeria.
+     * To close pizzeria we need shut down all thread pools.
      */
     public static void closePizzeria() {
-        while (true) {
-            if (queue.isEmpty() && bakers.stream().noneMatch(Baker::isBusy)) {
-                bakersPool.shutdownNow();
-                break;
-            }
-        }
-        while (true) {
-            if (stock.isEmpty() && deliverers.stream().noneMatch(Deliverer::isBusy)) {
-                deliverersPool.shutdownNow();
-                break;
-            }
-        }
-        System.out.println("Pizzeria is closed");
+        bakersPool.shutdownNow();
+        deliverersPool.shutdownNow();
     }
 
     /**
-     * Method for bakers to take order from queue.
+     * Take order from queue(for bakers).
      *
      * @return order
      * @throws InterruptedException if interrupted
      */
     public static Order takeFromQueue() throws InterruptedException {
-        return queue.pollFirst(5, TimeUnit.SECONDS);
+        synchronized (queue) {
+            return queue.pollFirst();
+        }
     }
 
     /**
-     * Method for deliverers to take orders from stock.
+     * Take order from stock(for deliverers).
      *
-     * @param capacity bag capacity of current deliverer
-     * @return list of orders to deliver
+     * @return order
      * @throws InterruptedException if interrupted
      */
     public static List<Order> takeFromStock(int capacity) throws InterruptedException {
-        List<Order> orders = new ArrayList<>();
-        for (int i = 0; i < capacity; i++) {
-            Order order = stock.pollFirst(5, TimeUnit.SECONDS);
-            if (order != null) {
-                orders.add(order);
+        synchronized (stock) {
+            List<Order> orders = new ArrayList<>();
+            while (!stock.isEmpty() && orders.size() < capacity) {
+                orders.add(stock.pollFirst());
             }
+            return orders;
         }
-        return orders;
     }
 
     /**
-     * Method for bakers to put cooked order in stock.
+     * Put ready order in stock(for bakers).
      *
-     * @param order order to put in stock
+     * @param order order to put
      */
     public static void putInStock(Order order) {
-        stock.add(order);
+        synchronized (stock) {
+            stock.addLast(order);
+            stock.notifyAll();
+        }
     }
 }

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
  */
 public class PizzeriaTest {
     @Test
-    public void pizzeriaTest() {
+    public void pizzeriaTest() throws InterruptedException {
         Main.main(new String[]{});
     }
 }
