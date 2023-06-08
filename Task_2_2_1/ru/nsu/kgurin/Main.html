@@ -14,7 +14,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="../../../jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="../../../jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="../../../jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="../../../jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -132,7 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Main</span>
 extends java.lang.Object</pre>
-<div class="block">ru.nsu.kgurin.Main class.</div>
+<div class="block">Main pizzeria class.</div>
 </li>
 </ul>
 </div>
@@ -174,12 +174,12 @@ extends java.lang.Object</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static java.util.concurrent.BlockingDeque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt;</code></td>
+<td class="colFirst"><code>static java.util.Deque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#queue">queue</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static java.util.concurrent.BlockingDeque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt;</code></td>
+<td class="colFirst"><code>static java.util.Deque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#stock">stock</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -226,43 +226,42 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#closePizzeria()">closePizzeria</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Method to close pizzeria.</div>
+<div class="block">To close pizzeria we need shut down all thread pools.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#main(java.lang.String%5B%5D)">main</a></span>&#8203;(java.lang.String[]&nbsp;args)</code></th>
 <td class="colLast">
-<div class="block">Here we collect all data about personal, start and
- close pizzeria.</div>
+<div class="block">Upload all data about employee, start and end pizzeria.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#openPizzeria()">openPizzeria</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Method to open pizzeria.</div>
+<div class="block">To open pizzeria we need submit all employee.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#putInStock(ru.nsu.kgurin.Order)">putInStock</a></span>&#8203;(<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&nbsp;order)</code></th>
 <td class="colLast">
-<div class="block">Method for bakers to put cooked order in stock.</div>
+<div class="block">Put ready order in stock(for bakers).</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="Order.html" title="class in ru.nsu.kgurin">Order</a></code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#takeFromQueue()">takeFromQueue</a></span>()</code></th>
 <td class="colLast">
-<div class="block">Method for bakers to take order from queue.</div>
+<div class="block">Take order from queue(for bakers).</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static java.util.List&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#takeFromStock(int)">takeFromStock</a></span>&#8203;(int&nbsp;capacity)</code></th>
 <td class="colLast">
-<div class="block">Method for deliverers to take orders from stock.</div>
+<div class="block">Take order from stock(for deliverers).</div>
 </td>
 </tr>
 </table>
@@ -331,7 +330,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>queue</h4>
-<pre>public static volatile&nbsp;java.util.concurrent.BlockingDeque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt; queue</pre>
+<pre>public static final&nbsp;java.util.Deque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt; queue</pre>
 </li>
 </ul>
 <a id="stock">
@@ -340,7 +339,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>stock</h4>
-<pre>public static volatile&nbsp;java.util.concurrent.BlockingDeque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt; stock</pre>
+<pre>public static final&nbsp;java.util.Deque&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt; stock</pre>
 </li>
 </ul>
 </li>
@@ -379,8 +378,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>main</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
-<div class="block">Here we collect all data about personal, start and
- close pizzeria.</div>
+<div class="block">Upload all data about employee, start and end pizzeria.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>args</code> - args</dd>
@@ -394,7 +392,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>openPizzeria</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;openPizzeria()</pre>
-<div class="block">Method to open pizzeria.</div>
+<div class="block">To open pizzeria we need submit all employee.</div>
 </li>
 </ul>
 <a id="closePizzeria()">
@@ -404,7 +402,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>closePizzeria</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;closePizzeria()</pre>
-<div class="block">Method to close pizzeria.</div>
+<div class="block">To close pizzeria we need shut down all thread pools.</div>
 </li>
 </ul>
 <a id="takeFromQueue()">
@@ -415,7 +413,7 @@ extends java.lang.Object</pre>
 <h4>takeFromQueue</h4>
 <pre class="methodSignature">public static&nbsp;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&nbsp;takeFromQueue()
                            throws java.lang.InterruptedException</pre>
-<div class="block">Method for bakers to take order from queue.</div>
+<div class="block">Take order from queue(for bakers).</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>order</dd>
@@ -432,12 +430,10 @@ extends java.lang.Object</pre>
 <h4>takeFromStock</h4>
 <pre class="methodSignature">public static&nbsp;java.util.List&lt;<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&gt;&nbsp;takeFromStock&#8203;(int&nbsp;capacity)
                                            throws java.lang.InterruptedException</pre>
-<div class="block">Method for deliverers to take orders from stock.</div>
+<div class="block">Take order from stock(for deliverers).</div>
 <dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>capacity</code> - bag capacity of current deliverer</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>list of orders to deliver</dd>
+<dd>order</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.InterruptedException</code> - if interrupted</dd>
 </dl>
@@ -450,10 +446,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>putInStock</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;putInStock&#8203;(<a href="Order.html" title="class in ru.nsu.kgurin">Order</a>&nbsp;order)</pre>
-<div class="block">Method for bakers to put cooked order in stock.</div>
+<div class="block">Put ready order in stock(for bakers).</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>order</code> - order to put in stock</dd>
+<dd><code>order</code> - order to put</dd>
 </dl>
 </li>
 </ul>

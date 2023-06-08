@@ -14,7 +14,7 @@
 <!--[if IE]>
 <script type="text/javascript" src="jquery/jszip-utils/dist/jszip-utils-ie.min.js"></script>
 <![endif]-->
-<script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-3.6.1.min.js"></script>
 <script type="text/javascript" src="jquery/jquery-ui.min.js"></script>
 </head>
 <body>
@@ -116,7 +116,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Main.html#closePizzeria()">closePizzeria()</a></span> - Static method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin">Main</a></dt>
 <dd>
-<div class="block">Method to close pizzeria.</div>
+<div class="block">To close pizzeria we need shut down all thread pools.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Baker.html#cook(ru.nsu.kgurin.Order)">cook(Order)</a></span> - Method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Baker.html" title="class in ru.nsu.kgurin">Baker</a></dt>
 <dd>
@@ -166,6 +166,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>
 <div class="block">Method to get id of current order.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="ru/nsu/kgurin/JsonData.html#getOrder(int)">getOrder(int)</a></span> - Method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/JsonData.html" title="class in ru.nsu.kgurin">JsonData</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/JsonData.html#getOrders()">getOrders()</a></span> - Method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/JsonData.html" title="class in ru.nsu.kgurin">JsonData</a></dt>
 <dd>
 <div class="block">Get list of orders.</div>
@@ -206,12 +208,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Main.html#main(java.lang.String%5B%5D)">main(String[])</a></span> - Static method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin">Main</a></dt>
 <dd>
-<div class="block">Here we collect all data about personal, start and
- close pizzeria.</div>
+<div class="block">Upload all data about employee, start and end pizzeria.</div>
 </dd>
 <dt><a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin"><span class="typeNameLink">Main</span></a> - Class in <a href="ru/nsu/kgurin/package-summary.html">ru.nsu.kgurin</a></dt>
 <dd>
-<div class="block">ru.nsu.kgurin.Main class.</div>
+<div class="block">Main pizzeria class.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Main.html#%3Cinit%3E()">Main()</a></span> - Constructor for class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin">Main</a></dt>
 <dd>&nbsp;</dd>
@@ -223,7 +224,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Main.html#openPizzeria()">openPizzeria()</a></span> - Static method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin">Main</a></dt>
 <dd>
-<div class="block">Method to open pizzeria.</div>
+<div class="block">To open pizzeria we need submit all employee.</div>
 </dd>
 <dt><a href="ru/nsu/kgurin/Order.html" title="class in ru.nsu.kgurin"><span class="typeNameLink">Order</span></a> - Class in <a href="ru/nsu/kgurin/package-summary.html">ru.nsu.kgurin</a></dt>
 <dd>
@@ -241,7 +242,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Main.html#putInStock(ru.nsu.kgurin.Order)">putInStock(Order)</a></span> - Static method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin">Main</a></dt>
 <dd>
-<div class="block">Method for bakers to put cooked order in stock.</div>
+<div class="block">Put ready order in stock(for bakers).</div>
 </dd>
 </dl>
 <a id="I:Q">
@@ -283,11 +284,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Main.html#takeFromQueue()">takeFromQueue()</a></span> - Static method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin">Main</a></dt>
 <dd>
-<div class="block">Method for bakers to take order from queue.</div>
+<div class="block">Take order from queue(for bakers).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Main.html#takeFromStock(int)">takeFromStock(int)</a></span> - Static method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Main.html" title="class in ru.nsu.kgurin">Main</a></dt>
 <dd>
-<div class="block">Method for deliverers to take orders from stock.</div>
+<div class="block">Take order from stock(for deliverers).</div>
 </dd>
 <dt><span class="memberNameLink"><a href="ru/nsu/kgurin/Order.html#toString()">toString()</a></span> - Method in class ru.nsu.kgurin.<a href="ru/nsu/kgurin/Order.html" title="class in ru.nsu.kgurin">Order</a></dt>
 <dd>
