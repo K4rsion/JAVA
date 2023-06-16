@@ -49,11 +49,6 @@ public class Baker implements Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                synchronized (Main.queue) {
-                    while (Main.queue.isEmpty()) {
-                        Main.queue.wait();
-                    }
-                }
                 Order order = Main.takeFromQueue();
                 cook(order);
                 Main.putInStock(order);

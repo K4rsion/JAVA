@@ -58,11 +58,6 @@ public class Deliverer implements Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()) {
             try {
-                synchronized (Main.stock) {
-                    while (Main.stock.isEmpty()) {
-                        Main.stock.wait();
-                    }
-                }
                 List<Order> orders = Main.takeFromStock(capacity);
                 if (!orders.isEmpty()) {
                     deliver(orders);
