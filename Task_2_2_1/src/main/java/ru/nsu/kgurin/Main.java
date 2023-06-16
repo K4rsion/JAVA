@@ -16,8 +16,8 @@ public class Main {
     public static ExecutorService deliverersPool;
     public static List<Baker> bakers = new ArrayList<>();
     public static List<Deliverer> deliverers = new ArrayList<>();
-    public static final Deque<Order> queue = new ArrayDeque<>();
-    public static final Deque<Order> stock = new ArrayDeque<>();
+    private static final Deque<Order> queue = new ArrayDeque<>();
+    private static final Deque<Order> stock = new ArrayDeque<>();
 
     /**
      * Upload all data about employee, start and end pizzeria.
@@ -76,6 +76,9 @@ public class Main {
      */
     public static Order takeFromQueue() throws InterruptedException {
         synchronized (queue) {
+            while (queue.isEmpty()) {
+                queue.wait();
+            }
             return queue.pollFirst();
         }
     }
@@ -89,6 +92,9 @@ public class Main {
     public static List<Order> takeFromStock(int capacity) throws InterruptedException {
         synchronized (stock) {
             List<Order> orders = new ArrayList<>();
+            while (stock.isEmpty()) {
+                stock.wait();
+            }
             while (!stock.isEmpty() && orders.size() < capacity) {
                 orders.add(stock.pollFirst());
             }
